@@ -16,14 +16,14 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Angus Chapman"
+title                    : "afchapman"
 title_separator          : "|"
 name                     : "Angus Chapman"
 description              : "PhD student studying neural mechanisms of attention"
 url                      : "https://afchapman.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "afchapman/afchapman" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+teaser                   : "assests/images/Seattle2017-2.jpg" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
@@ -101,7 +101,7 @@ analytics:
 # Site Author
 author:
   name             : "Angus Chapman"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/pf_pic.jpg"
   bio              : 
   location         : "San Diego, CA"
   email            : "afchapman@ucsd.edu"

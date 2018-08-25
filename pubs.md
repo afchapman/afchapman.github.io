@@ -1,6 +1,7 @@
 ---
 layout: single
 title: Publications
+classes: wide
 author_profile: true
 permalink: /pubs/
 ---
