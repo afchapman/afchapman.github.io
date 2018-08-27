@@ -1,8 +1,6 @@
 ---
-layout: single
 title: Publications
 classes: wide
-author_profile: true
 permalink: /pubs/
 ---
 
@@ -20,3 +18,7 @@ You can view my Google scholar profile [here](https://scholar.google.com/citatio
 
 ### Posters
 {% bibliography --file conf_posters %}
+
+
+
+![Twice Told Stories, Seattle, WA, 8/21/17](/assets/images/Seattle2018-1.jpg)
