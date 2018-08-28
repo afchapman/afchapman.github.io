@@ -4,3 +4,5 @@ main:
     url: /
   - title: "Publications"
     url: /pubs/
+  - title: "Research"
+    url: /research/
