@@ -4,6 +4,8 @@ main:
     url: /
   - title: "Publications"
     url: /pubs/
+  - title: "Research"
+    url: /research/
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
