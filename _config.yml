@@ -22,8 +22,8 @@ name                     : "Angus Chapman"
 description              : "PhD student studying neural mechanisms of attention"
 url                      : "https://afchapman.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "afchapman/afchapman" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : "assests/images/Seattle2017-2.jpg" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+repository               : "afchapman/afchapman.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
@@ -77,7 +77,7 @@ naver_site_verification  :
 
 # Social Sharing
 twitter:
-  username               :
+  username               : angusfchapman
 facebook:
   username               :
   app_id                 :
@@ -198,7 +198,7 @@ sass:
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
-paginate_path: /page:num/
+paginate_path: /blog/page:num/
 timezone: America/Los_Angeles # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
@@ -209,6 +209,7 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jemoji
+  - jekyll-scholar
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -266,20 +267,25 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: true
+      read_time: # true
       comments: # true
       share: true
       related: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
 
 scholar:
   source: ./assets/pubs
-  bibliography: pubs.bib
   bibliography_template: bib_temp
 
   sort_by: year
   order: descending
 
-  use_raw_bibtex_entry: true
   bibtex_filters:
   - latex
   - markdown
