@@ -1,4 +1,5 @@
 ---
+permalink: /gallery/
 gallery:
   -  url: /assets/images/Seattle2017-2.jpg
      image_path: /assets/images/Seattle2017-2.jpg

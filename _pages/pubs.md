@@ -1,7 +1,7 @@
 ---
 title: Publications
-classes: wide
 permalink: /pubs/
+classes: wide
 ---
 
 You can view my Google scholar profile [here](https://scholar.google.com/citations?user=GjpdpusAAAAJ&hl=en){:target="_blank"}
