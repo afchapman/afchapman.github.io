@@ -287,6 +287,6 @@ scholar:
   order: descending
 
   bibtex_filters:
-  - latex
-  - markdown
+    - latex
+    - markdown
 

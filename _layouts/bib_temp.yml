@@ -1,4 +1,17 @@
 ---
 ---
 
-{{ reference | replace_first: 'Chapman, A. F.', '<b>Chapman, A. F.</b>' | replace_first: 'Chapman, A.', '<b>Chapman, A.</b>' }}
+{% if entry.doi %}
+
+{% capture new_doi %}
+<a target="_blank" rel="noopener noreferrer" href="https://doi.org/{{ entry.doi }}">https://doi.org/{{ entry.doi }}</a>
+{% endcapture %}
+
+{% else %}
+{% assign new_doi = '' %}
+
+{% endif %}
+
+
+{{ reference | replace_first: 'Chapman, A. F.', '<b>Chapman, A. F.</b>' | replace_first: 'Chapman, A.', '<b>Chapman, A.</b>' |
+replace: 'https://doi.org/', '' | replace: entry.doi, new_doi}}
