@@ -280,7 +280,7 @@ defaults:
       author_profile: true
 
 scholar:
-  source: ./assets/pubs
+  source: ./assets
   bibliography_template: bib_temp
 
   sort_by: year
