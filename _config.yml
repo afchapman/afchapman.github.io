@@ -283,6 +283,8 @@ scholar:
   source: ./assets
   bibliography_template: bib_temp
 
+  repository: ./assets/posters
+
   sort_by: year
   order: descending
 
