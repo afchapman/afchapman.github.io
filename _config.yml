@@ -104,32 +104,23 @@ author:
   avatar           : "/assets/images/pf_pic.jpg"
   bio              : 
   location         : "San Diego, CA"
-  email            : "afchapman@ucsd.edu"
-  uri              :
   home             : # null (default), "absolute or relative url to link to author home"
-  bitbucket        :
-  codepen          :
-  dribbble         :
-  flickr           :
-  facebook         :
-  foursquare       :
-  github           : "afchapman"
-  gitlab           :
-  google_plus      :
-  keybase          :
-  instagram        :
-  lastfm           :
-  linkedin         : # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
-  pinterest        :
-  soundcloud       :
-  stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
-  steam            : # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
-  tumblr           :
-  twitter          : "angusfchapman"
-  vine             :
-  weibo            :
-  xing             :
-  youtube          : # "https://youtube.com/c/MichaelRoseDesign"
+  links:
+    - label: "Email"
+      icon: "fas fa-envelope"
+      url: "afchapman@ucsd.edu"
+    - label: "Twitter"
+      icon: "fab fa-twitter"
+      url: "https://twitter.com/angusfchapman"
+    - label: "Scholar"
+      icon: "ai ai-google-scholar"
+      url: "https://scholar.google.com/citations?user=GjpdpusAAAAJ&hl=en"
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/afchapman"
+    - label: "OSF"
+      icon: "ai ai-osf"
+      url: "https://osf.io/v46um/"
 
 
 # Reading Files
