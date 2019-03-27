@@ -105,7 +105,6 @@ author:
   bio              : 
   location         : "San Diego, CA"
   home             : # null (default), "absolute or relative url to link to author home"
-  email            : "afchapman@ucsd.edu"
   links:
     - label: "Email"
       icon: "fas fa-envelope"
