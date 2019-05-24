@@ -12,6 +12,9 @@ You can view my Google scholar profile [here](https://scholar.google.com/citatio
 ## Manuscripts submitted or in preparation
 {% bibliography -q @*[pubtype=submitted] %}
 
+## Book Chapters
+{% bibliography -q @*[pubtype=chapter] %}
+
 ## Conference presentations
 ### Talks
 {% bibliography -q @*[pubtype=conftalk] %}
