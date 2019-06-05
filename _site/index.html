@@ -1,9 +1,9 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.12.2 by Michael Rose
-  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.16.4 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
-  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
 <html lang="en" class="no-js">
   <head>
@@ -58,7 +58,7 @@
 
   <script type="application/ld+json">
     {
-      "@context": "http://schema.org",
+      "@context": "https://schema.org",
       "@type": "Person",
       "name": "Angus Chapman",
       "url": "https://afchapman.github.io",
@@ -77,9 +77,7 @@
 
 <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="afchapman Feed">
 
-<!-- http://t.co/dKP3o1e -->
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
+<!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
@@ -89,7 +87,7 @@
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<!--[if lte IE 9]>
+<!--[if IE ]>
   <style>
     /* old IE unsupported flexbox fixes */
     .greedy-nav .site-title {
@@ -105,11 +103,9 @@
 <![endif]-->
 
 
-    <!-- start custom head snippets -->
 
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
-
-<!-- end custom head snippets -->
+    <!-- Academicons -->
+<link rel="stylesheet" href="https://afchapman.github.io/assets/css/academicons.min.css">
 
   </head>
 
@@ -119,10 +115,13 @@
 <div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
 <![endif]-->
 
-    <div class="masthead">
+    
+
+<div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
+        
         <a class="site-title" href="/">afchapman</a>
         <ul class="visible-links"><li class="masthead__menu-item">
               <a href="/" >About</a>
@@ -131,7 +130,7 @@
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
-          <span class="visually-hidden">Toggle Menu</span>
+          <span class="visually-hidden">Toggle menu</span>
           <div class="navicon"></div>
         </button>
         <ul class="hidden-links hidden"></ul>
@@ -152,7 +151,7 @@
   
 
 
-<div itemscope itemtype="http://schema.org/Person">
+<div itemscope itemtype="https://schema.org/Person">
 
   
     <div class="author__avatar">
@@ -175,36 +174,33 @@
     <button class="btn btn--inverse">Follow</button>
     <ul class="author__urls social-icons">
       
-        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
           <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">San Diego, CA</span>
         </li>
       
 
       
-
-      
-        <li>
-          <a href="mailto:afchapman@ucsd.edu">
-            <meta itemprop="email" content="afchapman@ucsd.edu" />
-            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email
-          </a>
-        </li>
-      
-
-      
-
-      
-        <li>
-          <a href="https://twitter.com/angusfchapman" itemprop="sameAs">
-            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
-          </a>
-        </li>
-      
-
-      
-
-      
-
+        
+          
+            <li><a href="mailto:afchapman@ucsd.edu" rel="nofollow noopener noreferrer"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/angusfchapman" rel="nofollow noopener noreferrer"><i class="fab fa-twitter" aria-hidden="true"></i> Twitter</a></li>
+          
+        
+          
+            <li><a href="https://scholar.google.com/citations?user=GjpdpusAAAAJ&hl=en" rel="nofollow noopener noreferrer"><i class="ai ai-google-scholar" aria-hidden="true"></i> Scholar</a></li>
+          
+        
+          
+            <li><a href="https://github.com/afchapman" rel="nofollow noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
+          
+        
+          
+            <li><a href="https://osf.io/v46um/" rel="nofollow noopener noreferrer"><i class="ai ai-osf" aria-hidden="true"></i> OSF</a></li>
+          
+        
       
 
       
@@ -216,11 +212,17 @@
       
 
       
-        <li>
-          <a href="https://github.com/afchapman" itemprop="sameAs">
-            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
-          </a>
-        </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
       
 
       
@@ -251,7 +253,7 @@
 
       <!--
   <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
       <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
     </a>
   </li>
@@ -264,7 +266,7 @@
   </div>
 
 
-  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     
     
     
@@ -312,6 +314,7 @@
   
   
 </div>
+
     </div>
 
     
@@ -324,27 +327,23 @@
         <div class="page__footer-follow">
   <ul class="social-icons">
     
+
     
-      <li><a href="https://twitter.com/angusfchapman"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
-    
-    
-    
-      <li><a href="https://github.com/afchapman"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
-    
-    
-    
+
     <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2018 Angus Chapman. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2019 Angus Chapman. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
 
     
   <script src="/assets/js/main.min.js"></script>
-  <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+
+
 
 
 

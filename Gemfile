@@ -10,6 +10,7 @@ source "https://rubygems.org"
 # Happy Jekylling!
 gem "github-pages", group: :jekyll_plugins
 gem "jekyll-scholar", group: :jekyll_plugins
+gem "jekyll-include-cache", group: :jekyll_plugins
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do

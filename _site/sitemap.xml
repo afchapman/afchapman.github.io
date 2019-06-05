@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://afchapman.github.io/misc/dsc_10172018/</loc>
+</url>
+<url>
 <loc>https://afchapman.github.io/</loc>
 </url>
 <url>
 <loc>https://afchapman.github.io/pubs/</loc>
+</url>
+<url>
+<loc>https://afchapman.github.io/assets/posters/Chapman_SfN18.pdf</loc>
+<lastmod>2018-12-10T22:13:41-08:00</lastmod>
+</url>
+<url>
+<loc>https://afchapman.github.io/assets/posters/Chapman_VSS18.pdf</loc>
+<lastmod>2018-12-10T22:13:41-08:00</lastmod>
+</url>
+<url>
+<loc>https://afchapman.github.io/assets/posters/Chapman_VSS19.pdf</loc>
+<lastmod>2019-05-13T20:55:05-07:00</lastmod>
 </url>
 </urlset>
