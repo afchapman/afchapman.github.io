@@ -8,6 +8,6 @@ I am currently a PhD student in the Department of Psychology at UC San Diego. I 
 
 Before moving to the US for grad school, I received my BSc and BSc (Hons) in psychology, statistics, and mathematics from Victoria University of Wellington in New Zealand. My early research experience came from working with [Gina Grimshaw](http://www.canlabvuw.wordpress.com){:target="_blank"} and [Tirta Susilo](http://www.susilolab.org){:target="_blank"}.
 
-If you have any questions, you can contact me at <afchapman@ucsd.edu> or on Twitter [@angusfchapman](http://twitter.com/angusfchapman){:target="blank"}.
+If you have any questions, you can contact me at [{{ site.email }}](mailto:{{ site.email }}) or on Twitter [@{{ site.twitter.username }}](http://twitter.com/{{ site.twitter.username }}){:target="blank"}.
 
 ![Seattle, WA, 9/12/17](/assets/images/Seattle2017-2.jpg)
