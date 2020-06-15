@@ -1,0 +1,10 @@
+---
+title: "Psychological Scaling"
+author: "Angus Chapman"
+date: "6/15/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+
+```
