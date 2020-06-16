@@ -1,10 +1,105 @@
 ---
-title: "Psychological Scaling"
+title: "Psychological Scaling using MLDS"
 author: "Angus Chapman"
-date: "6/15/2020"
-output: html_document
+output: 
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
 ---
 
 ```{r setup, include=FALSE}
-
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
 ```
+
+This tutorial was written in R, using RMarkdown. You can access the markdown file <a href="index.Rmd" target="_blank">here</a>.
+
+## What is psychological scaling?
+
+## What does a psychological scaling task look like?
+
+```{r load data, include=F}
+data_triad <- read_csv('../../../assets/resources/psychscaling/data_triad.csv',
+                       col_types = 'dddldld')
+data_quad  <- read_csv('../../../assets/resources/psychscaling/data_quad.csv',
+                       col_types = 'dddldld')
+```
+
+## How do we calculate the scaling function?
+
+Once you have data, we can fit the model easily using GLM methods. Knoblauch and Maloney (2012) also describe methods for fitting through direct optimization, however the two methods will lead to very similar scaling estimates.  
+
+Before we fit the model, let's consider how our data is structured. Here's the first few trials from the triad task for one participant:
+
+```{r peek triad data, echo=F}
+data_triad %>%
+  mutate(trialacc = as.numeric(trialacc)) %>%
+  head %>%
+  knitr::kable()
+```
+
+On each trial, we save out the difference in color angle between the reference color and the left item (diffL) and right item (diffR), as well as the participants' choice for which color is most similar to the reference color (saidL). These are going to be the data columns we use for modelling. We could also use their accuracy on each trial; it's mathematically equivalent, but requires recoding the left and right angles to whether they are the correct choice on a given trial (try it yourself and compare!).
+
+This format is going to remain consistent when analyzing the quad task, as you can see from the structure of that data:
+
+```{r peek quad data, echo=F}
+data_quad %>%
+  mutate(trialacc = as.numeric(trialacc)) %>%
+  head %>%
+  knitr::kable()
+```
+
+Here, we ignore the identity of the individual items, and just code the angle difference between the top pair and the bottom pair. 
+
+Because of the similarity in how we fit the data from each task, I'll just use the quad task data from this point onwards (mostly because the experiment I'm taking it from has more trials overall).
+
+#### Fitting the GLM
+
+Although the name may sound intimidating, actually fitting the Maximum Likelihood Difference Scaling model is pretty simple. Essentially, we are estimating the scaling parameters using logistic regression. However, we do have to go one step beyond how you would fit a normal regression model. 
+In this case, we can't just regress the color angle differences onto participants responses, because 1) responses are going to be a function of the relationship between the similarity of the top and bottom colors, and 2) any given difference in color (say, 20&deg; from the reference color) can be the correct choice on one trial (if the alternative is 60&deg; from the reference) but the incorrect choice on another trial (if the alternative is only 10&deg; different from the reference).
+
+This means we have to fit the model slightly more directly, by first constructing the full *design matrix*, which we then regress onto participants' responses. If you've ever taken an upper-level course in regression models or GLMs you've probably done this before, but even if not the idea is not too complicated.
+The design matrix is just a way of encoding into your model the levels of different variables in your data: in a one-way ANOVA, for example, the design matrix contains a column for each level of your independent variable, and each column records a 1 if the condition is present or a 0 if it is absent; in linear regression, each column is a predictor variable with the values of that predictor for each observation (e.g., individuals' heights).
+
+For MLDS, we are going to have a column for each possible difference level, and each column will record if that difference was shown on the top (-1), on the bottom (1), or not shown (0). The reason for this is that as the difference between the colors on the top gets larger, participants should be *less likely* to choose the top, while as the difference on the bottom gets larger, participants should be *more likely* to choose the top.
+
+So, let's build a design matrix! You can do this in any way that works for you, however the R code below should with some adaptations to your particular experiment setup.
+
+```{r build design matrix}
+stim_diffs <- c(0,10,20,30,40,60,90,120,180) # color angle differences used
+
+# first, generate indices for each stim diff to help fill the matrix
+data_quad <- data_quad %>%
+  mutate(diffTopIdx = match(diffTop, stim_diffs),
+         diffBotIdx = match(diffBot, stim_diffs))
+
+quad_mat <- matrix(0, nrow = nrow(data_quad), ncol = length(stim_diffs)) # fill matrix with 0's
+colnames(quad_mat) <- paste0("stim",stim_diffs) # give the columns titles
+
+# loop over trials and fill in the matrix
+for(ii in 1:nrow(quad_mat)) {
+  quad_mat[ii, data_quad$diffTopIdx[ii]] <- -1 # top diffs are -1
+  quad_mat[ii, data_quad$diffBotIdx[ii]] <- 1  # bottom diffs are 1
+}
+
+quad_mat %>% head # check the first few rows for consistency
+```
+
+You should be able to compare this matrix to the data shown earlier. For the first trial: the color difference on top was 90&deg;, which receives a -1 in the design matrix; the color difference on the bottom was 120&deg;, which receives a 1 in the design matrix.
+
+But, we're not quite done yet. Because every row of the design matrix contains both a 1 and a -1, the sum of every row is 0. This means that our matrix is *singular* and the model will not fit correctly. We solve this by discarding the first column of the matrix, corresponding to when the difference between colors on the top or bottom is zero (i.e., the pair are the same color). This does two useful things: it allows the model to be fit, and it effectively fixes our scale so that 0&deg; difference corresponds to a scaling value of zero (which helps interpreting the other scale values too).
+
+```{r fix design matrix}
+quad_mat <- quad_mat[,-1] # drop the first column
+```
+
+Now we can fit our model. If you prefer, you can do this by constructing a data frame that combines participants' responses with the design matrix, but I'm just going to fit things using these structures separately.
+
+We fit the MLDS model using the based 'glm' function in R, but specifying a logistic regression (specifically a "probit" model) as we are predicting a binary output (participants either select the left item, or not). We also remove the intercept from the model (the '-1' in the model specification below), because we are fixing the scale at 0, as mentioned above.
+
+```{r fit quad psych scaling}
+scaling_fit <- glm(data_quad$saidTop ~ quad_mat -1, family = binomial("probit"))
+summary(scaling_fit)
+```
+
+The coefficients from this model are our scaled values. 
