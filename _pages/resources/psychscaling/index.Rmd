@@ -12,6 +12,18 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 ```
 
+```{r plot theme, include=F}
+plot_theme <- theme(
+  plot.margin = unit(c(.75,.75,.75,.75),'lines'),
+  plot.background = element_blank(),
+  panel.background = element_blank(),
+  panel.grid = element_blank(),
+  axis.line = element_line(color = 'black'),
+  axis.text = element_text(size = 12),
+  axis.title = element_text(size = 16)
+)
+```
+
 This tutorial was written in R, using RMarkdown. You can access the markdown file <a href="index.Rmd" target="_blank">here</a>.
 
 ## What is psychological scaling?
@@ -98,8 +110,45 @@ Now we can fit our model. If you prefer, you can do this by constructing a data 
 We fit the MLDS model using the based 'glm' function in R, but specifying a logistic regression (specifically a "probit" model) as we are predicting a binary output (participants either select the left item, or not). We also remove the intercept from the model (the '-1' in the model specification below), because we are fixing the scale at 0, as mentioned above.
 
 ```{r fit quad psych scaling}
+# model specification
 scaling_fit <- glm(data_quad$saidTop ~ quad_mat -1, family = binomial("probit"))
 summary(scaling_fit)
 ```
 
-The coefficients from this model are our scaled values. 
+The coefficients from this model are our scaled values, so let's quickly plot them (and also include the point at zero).
+
+```{r plot coefficients, echo=F}
+# pull coefficients
+scaling_out <- data.frame(colors = stim_diffs,
+                          coefs = c(0,coef(scaling_fit)))
+
+scaling_out %>%
+  ggplot(aes(x = colors, y = coefs)) +
+  geom_line(size = 1) +
+  scale_x_continuous("Color distance\u00b0", expand = c(0,0), breaks = stim_diffs) +
+  scale_y_continuous("MLDS scaled values", expand = c(0,0)) +
+  plot_theme
+```
+
+But what do these scale values actually mean? Because we used the **probit** link function in our model, these values are interpretable as quantiles from the cumulative normal distribution. To show you that this is true, we can calculate the probabilities ourselves! 
+
+```{r scale quantiles, echo=F}
+data_quad %>%
+  filter(diffTop %in% c(0,10), diffBot %in% c(0,10)) %>%
+  summarise(acc = mean(trialacc)) %>% .$acc -> quant_0_10
+
+data_quad %>%
+  filter(diffTop %in% c(90,180), diffBot %in% c(90,180)) %>%
+  summarise(acc = mean(trialacc)) %>% .$acc -> quant_90_180
+```
+
+For example, take the scale value for a color distance of 10&deg; (`r round(scaling_out$coefs[2],3)`). Implicitly, this is the quantile for the comparison between pairs with 0&deg; and 10&deg; color distance. If we look at the data for trials with differences of 0&deg; and 10&deg;, we find that this participants' average accuracy is `r round(quant_0_10,3)`. 
+Then, if we compare with the cumulative normal distribution, we find that &Phi;(`r round(scaling_out$coefs[2],3)`) = `r round(pnorm(scaling_out$coefs[2]),3)`. Pretty close!
+
+We can do this for comparison between any pair of distances! The values we get out of the model are all relative to 0&deg;, but we can take differences between values to compare those points too. Take, for example, the difference between 90&deg; and 180&deg;. When comparing pairs that differed by these distances, the participant in our data had an average accuracy of `r round(quant_90_180,3)`, 
+and if we compared the scale values we find that &Phi;(`r round(scaling_out$coefs[9],3)`-`r round(scaling_out$coefs[7],3)`) = &Phi;(`r round(scaling_out$coefs[9]-scaling_out$coefs[7],3)`) = `r round(pnorm(scaling_out$coefs[9]-scaling_out$coefs[7]),3)`. 
+
+The model fit is a little bit off here, predicting better performance than we actually observe, but this demonstrates the limitation of looking at comparisons like this in isolation. In this dataset, for example, there are only 11 trials for each pair of comparisons, but 36 possible comparisons between all differences.
+When fitting the model for each point, it's not trying to fit perfectly to individual comparisons like we have looked at here, but all comparisons that exist in the data. 
+
+Holistically, the model output is consistent with what we observe in the data: participants are better at judgments between pairs that are lower overall in distance (that are more similar, e.g., 0&deg; vs 30&deg;) than pairs that are further in distance (e.g., 90&deg; vs 180&deg;).
