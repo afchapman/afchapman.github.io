@@ -11,7 +11,7 @@
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
 # theme                  : "minimal-mistakes-jekyll"
-remote_theme             : "mmistakes/minimal-mistakes"
+remote_theme             : "mmistakes/minimal-mistakes@4.22.0"
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
@@ -19,11 +19,11 @@ locale                   : "en-US"
 title                    : "afchapman"
 title_separator          : "|"
 name                     : "Angus Chapman"
-description              : "PhD student studying neural mechanisms of attention"
+description              : "Postdoc studying neural mechanisms of attention"
 url                      : "https://afchapman.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "afchapman/afchapman.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-email                    : afchapman@ucsd.edu
+email                    : angusc@bu.edu
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -104,12 +104,12 @@ author:
   name             : "Angus Chapman"
   avatar           : "/assets/images/pf_pic.jpg"
   bio              : 
-  location         : "San Diego, CA"
+  location         : "Boston, MA"
   home             : # null (default), "absolute or relative url to link to author home"
   links:
     - label: "Email"
       icon: "fas fa-envelope"
-      url: "mailto:afchapman@ucsd.edu"
+      url: "mailto:angusc@bu.edu"
     - label: "Twitter"
       icon: "fab fa-twitter"
       url: "https://twitter.com/angusfchapman"
