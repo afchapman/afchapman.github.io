@@ -250,6 +250,12 @@ compress_html:
   ignore:
     envs: development
 
+# Collections
+collections:
+  tutorials:
+    output: true
+    permalink: /tutorials/:path/
+
 
 # Defaults
 defaults:
@@ -271,6 +277,15 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # _tutorials
+  - scope:
+      path: ""
+      type: tutorials
+    values:
+      layout: single
+      classes: wide
+      author_profile: true
+      share: true
 
 scholar:
   source: ./assets
