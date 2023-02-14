@@ -1,0 +1,112 @@
+body {
+ 	font-size: 16pt;
+	font-family: Helvetica, Arial;
+	background-color: #808080;
+  	color: white;
+}
+
+div {
+	text-align: center;
+}
+
+.mainTrial {
+	width: 600px;
+	height: 600px;
+	margin: 20px auto;
+}
+
+.trialFix {
+	width: 80px;
+	height: 80px;
+	margin: 260px 260px;
+	position: absolute;
+}
+
+.trialGrating {
+	display: none;
+	width: 240px;
+	height: 240px;
+	margin: 180px 180px;
+	position: absolute;
+}
+
+#gratingStim {
+	width: 240px;
+	height: 240px;
+	border: 1px solid black;
+	border-radius: 100%;
+	position: absolute;
+	background-image: url(../images/stimGrating_50.png);
+	background-position: center;
+	background-size: 280px 280px;
+}
+
+#gratingFill {
+	width: 100px;
+	height: 100px;
+	border: 1px solid black;
+	border-radius: 100%;
+	margin: 70px 70px;
+	background-color: #808080;
+	position: absolute;
+}
+
+.trialResp {
+	display: none;
+	margin-top: 180px;
+	width: 600px;
+	position: absolute;
+}
+
+.trialFeedback {
+	display: none;
+	margin-top: 240px;
+	width: 600px;
+	position: absolute;
+}
+
+#outerRing {
+	display: none;
+	width: 80px;
+	height: 80px;
+	border-radius: 100%;
+	background-color: black;
+	position: absolute;
+}
+
+#outerFill {
+	width: 70px;
+	height: 70px;
+	border-radius: 100%;
+	margin: 5px 5px;
+	background-color: #808080;
+	position: absolute;
+}
+
+#innerRing {
+	display: none;
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	margin: 15px 15px;
+	background-color: black;
+	position: absolute;
+}
+
+#innerFill {
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	margin: 20px 20px;
+	background-color: #808080;
+	position: absolute;
+}
+
+#fixDot {
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+	margin: 35px 35px;
+	background-color: black;
+	position: absolute;
+}

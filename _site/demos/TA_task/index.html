@@ -1,0 +1,219 @@
+<html>
+<head>
+	<title>Attention Experiment</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link href="resources/css/index.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+	<!-- trial div -->
+	<div class="mainTrial">
+		<!-- grating stimulus -->
+		<div class="trialGrating">
+			<div id="gratingStim"></div>
+			<div id="gratingFill"></div>
+		</div>
+
+		<!-- fixation for queuing T1 or T2 -->
+		<div class="trialFix">
+			<div id="outerRing"></div>
+			<div id="outerFill"></div>
+			<div id="innerRing"></div>
+			<div id="innerFill"></div>
+			<div id="fixDot"></div>
+		</div>
+
+		<!-- response text -->
+		<div class="trialResp">
+			<p>Which direction was the grating tilted?<br>("n" = counter-clockwise, "m" = clockwise")</p>
+		</div>
+
+		<!-- feedback text -->
+		<div class="trialFeedback"></div>
+	</div>
+
+
+	<script>
+		// ---------------------
+		// Experiment Parameters
+		// ---------------------
+		stimTime = 100; // stimulus presentation time
+		stimSOA  = 250; // time between T1 and T2 stim
+		stimDelay = 1000; // time from cue to first stim
+
+		stimTilt = 2; // degrees to tilt each stimulus from cardinal
+
+		cueTime = 500; // cue presentation time
+
+		responseDelay = 500; // time after T2 til response cue
+
+		trialCues = [1, 1, 2, 2, 3]; // 40% T1, 40% T2, 20% neutral
+		trialValidity = [1, 1, 1, 2]; // 75% validity
+
+		RunTrial();
+
+		// run trial with fixed stimulus timing
+		function RunTrial() {
+			// get precue type and validity
+			thisTrialCue = trialCues[Math.floor(Math.random()*trialCues.length)];
+			thisTrialValidity = trialValidity[Math.floor(Math.random()*trialValidity.length)];
+
+			// determine response cue
+			if ( thisTrialCue < 3 ) {
+				if ( thisTrialValidity == 1 ) {
+					thisTrialTest = thisTrialCue;
+				} else {
+					thisTrialTest = 3-thisTrialCue;
+				};
+			} else {
+				thisTrialTest = Math.ceil(Math.random()*2);
+			};
+
+			// add stimulus rotations (baseline 90° offset + 5° tilt)
+			tiltBaselineT1 = Math.round(Math.random())*90;
+			tiltDirT1 = Math.ceil(Math.random()*2);
+			tiltOffsetT1 = stimTilt*Math.pow(-1,tiltDirT1);
+			tiltOverallT1 = tiltBaselineT1 - tiltOffsetT1;
+
+			tiltBaselineT2 = Math.round(Math.random())*90;
+			tiltDirT2 = Math.ceil(Math.random()*2);
+			tiltOffsetT2 = stimTilt*Math.pow(-1,tiltDirT2);
+			tiltOverallT2 = tiltBaselineT2 - tiltOffsetT2;
+
+			// get target reponse for accuracy checking
+			if ( thisTrialTest == 1 ) {
+				gratingRotTarg = tiltDirT1;
+				gratingRotNontarg = tiltDirT2;
+			} else {
+				gratingRotTarg = tiltDirT2;
+				gratingRotNontarg = tiltDirT1;
+			};
+
+			setTimeout(ShowPrecue,1000);
+		}
+
+		function ShowPrecue() {
+			// present precue
+			if ( thisTrialCue == 1 ) { // cue T1
+				$("#innerRing").css("background-color","black");
+				$("#outerRing").css("background-color","#606060");
+			} else if ( thisTrialCue == 2 ) { // cue T2
+				$("#innerRing").css("background-color","#606060");
+				$("#outerRing").css("background-color","black");
+			} else { // cue neutral
+				$("#innerRing").css("background-color","black");
+				$("#outerRing").css("background-color","black");
+			}
+
+			$("#innerRing").show();
+			$("#outerRing").show();
+
+			setTimeout(function() {
+				$("#innerRing").hide();
+				$("#outerRing").hide();
+			}, cueTime);
+
+			setTimeout(ShowStimT1, cueTime+stimDelay);
+		}
+
+		function ShowStimT1() {
+			// present T1
+			$(".trialGrating").css("rotate",tiltOverallT1+"deg");
+			$(".trialGrating").show();
+
+			// hide T1
+			setTimeout(function() {
+				$(".trialGrating").css("rotate","none");
+				$(".trialGrating").hide();
+			}, stimTime);
+
+			// present T2 after SOA
+			setTimeout(ShowStimT2, stimSOA);
+		}
+
+		function ShowStimT2() {
+			// present T2
+			$(".trialGrating").css("rotate",tiltOverallT2+"deg");
+			$(".trialGrating").show();
+
+			// hide T2
+			setTimeout(function() {
+				$(".trialGrating").css("rotate","none");
+				$(".trialGrating").hide();
+			}, stimTime);
+
+			// show response cue
+			setTimeout(ShowRespCue, responseDelay);
+		}
+
+		function ShowRespCue() {
+			// present response cue
+			if ( thisTrialTest == 1 ) { // cue T1
+				$("#innerRing").css("background-color","black");
+				$("#outerRing").css("background-color","#606060");
+			} else if ( thisTrialTest == 2 ) { // cue T2
+				$("#innerRing").css("background-color","#606060");
+				$("#outerRing").css("background-color","black");
+			}
+
+			$("#innerRing").show();
+			$("#outerRing").show();
+
+			setTimeout(function() {
+				$("#innerRing").hide();
+				$("#outerRing").hide();
+			}, cueTime);
+
+			setTimeout(GetResponse, cueTime+100);
+		}
+
+		function GetResponse() {
+			// present response screen
+			$(".trialResp").show();
+
+			// set up key listener
+			trialRespStart = new Date();
+			$(document).on("keydown.trialResp", PressedKeyResp);
+		}
+
+		function PressedKeyResp() {
+			// check response keys
+			if ( event.which == 77 || event.which == 78 ) { // m = 77, n = 78
+				$(document).off("keydown.trialResp")
+
+				pressedAt = new Date();
+				$(".trialResp").hide();
+				RT = pressedAt - trialRespStart;
+
+				// check accuracy
+				responseKeyCorr = event.which-76; // 1 = cw, 2 = ccw
+				if ( responseKeyCorr == gratingRotTarg ) {
+					trialAcc = 1;
+					feedbackText = "correct";
+					feedbackColor = "green";
+				} else {
+					trialAcc = 0;
+					feedbackText = "incorrect";
+					feedbackColor = "red";
+				};
+
+				// give feedback
+				$(".trialFeedback").text(feedbackText);
+				$(".trialFeedback").css("color",feedbackColor);
+				$(".trialFeedback").show();
+
+				// go to next trial
+				setTimeout(function() {
+					$(".trialFeedback").hide();
+					RunTrial();
+				}, 500);
+			}
+
+		}
+		
+	</script>
+
+</body>
+
+</html>
