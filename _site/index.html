@@ -1,25 +1,30 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.12.1 by Michael Rose
-  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.22.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
-  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
 <html lang="en" class="no-js">
   <head>
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>afchapman</title>
-<meta name="description" content="PhD student studying neural mechanisms of attention">
+<meta name="description" content="Postdoc studying neural mechanisms of attention">
 
+
+  <meta name="author" content="Angus Chapman">
+  
 
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="afchapman">
 <meta property="og:title" content="afchapman">
-<meta property="og:url" content="http://localhost:4000/">
+<meta property="og:url" content="https://afchapman.github.io/">
 
+
+  <meta property="og:description" content="Postdoc studying neural mechanisms of attention">
 
 
 
@@ -27,8 +32,8 @@
 
   <meta name="twitter:site" content="@angusfchapman">
   <meta name="twitter:title" content="afchapman">
-  <meta name="twitter:description" content="PhD student studying neural mechanisms of attention">
-  <meta name="twitter:url" content="http://localhost:4000/">
+  <meta name="twitter:description" content="Postdoc studying neural mechanisms of attention">
+  <meta name="twitter:url" content="https://afchapman.github.io/">
 
   
     <meta name="twitter:card" content="summary">
@@ -48,24 +53,21 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/">
+<link rel="canonical" href="https://afchapman.github.io/">
 
 
 
 
-
-
-
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
       "@type": "Person",
       "name": "Angus Chapman",
-      "url": "http://localhost:4000",
-      "sameAs": null
-    }
-  </script>
-
+      "url": "https://afchapman.github.io/"
+    
+  }
+</script>
 
 
 
@@ -75,11 +77,11 @@
 <!-- end _includes/seo.html -->
 
 
-<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="afchapman Feed">
 
-<!-- http://t.co/dKP3o1e -->
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="afchapman Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
@@ -88,8 +90,9 @@
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
 
-<!--[if lte IE 9]>
+<!--[if IE]>
   <style>
     /* old IE unsupported flexbox fixes */
     .greedy-nav .site-title {
@@ -105,33 +108,54 @@
 <![endif]-->
 
 
-    <!-- start custom head snippets -->
+    <!-- Academicons -->
+<link rel="stylesheet" href="https://afchapman.github.io/assets/css/academicons.min.css">
 
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137026801-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-<!-- end custom head snippets -->
+  gtag('config', 'UA-137026801-1');
+</script>
 
   </head>
 
   <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
 
     <!--[if lt IE 9]>
 <div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
 <![endif]-->
 
-    <div class="masthead">
+    
+
+<div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <a class="site-title" href="/">afchapman</a>
+        
+        <a class="site-title" href="/">
+          afchapman
+          
+        </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/" >About</a>
+              <a href="/">About</a>
             </li><li class="masthead__menu-item">
-              <a href="/pubs/" >Publications</a>
+              <a href="/pubs/">Publications</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
-          <span class="visually-hidden">Toggle Menu</span>
+          <span class="visually-hidden">Toggle menu</span>
           <div class="navicon"></div>
         </button>
         <ul class="hidden-links hidden"></ul>
@@ -152,12 +176,10 @@
   
 
 
-<div itemscope itemtype="http://schema.org/Person">
+<div itemscope itemtype="https://schema.org/Person">
 
   
     <div class="author__avatar">
-      
-
       
         <img src="/assets/images/pf_pic.jpg" alt="Angus Chapman" itemprop="image">
       
@@ -175,36 +197,33 @@
     <button class="btn btn--inverse">Follow</button>
     <ul class="author__urls social-icons">
       
-        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">San Diego, CA</span>
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Boston, MA</span>
         </li>
       
 
       
-
-      
-        <li>
-          <a href="mailto:afchapman@ucsd.edu">
-            <meta itemprop="email" content="afchapman@ucsd.edu" />
-            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email
-          </a>
-        </li>
-      
-
-      
-
-      
-        <li>
-          <a href="https://twitter.com/angusfchapman" itemprop="sameAs">
-            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
-          </a>
-        </li>
-      
-
-      
-
-      
-
+        
+          
+            <li><a href="mailto:angusc@bu.edu" rel="nofollow noopener noreferrer"><i class="fas fa-envelope" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/angusfchapman" rel="nofollow noopener noreferrer"><i class="fab fa-twitter" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+            <li><a href="https://scholar.google.com/citations?user=GjpdpusAAAAJ&hl=en" rel="nofollow noopener noreferrer"><i class="ai ai-google-scholar" aria-hidden="true"></i><span class="label">Scholar</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/afchapman" rel="nofollow noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://osf.io/v46um/" rel="nofollow noopener noreferrer"><i class="ai ai-osf" aria-hidden="true"></i><span class="label">OSF</span></a></li>
+          
+        
       
 
       
@@ -216,11 +235,17 @@
       
 
       
-        <li>
-          <a href="https://github.com/afchapman" itemprop="sameAs">
-            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
-          </a>
-        </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
       
 
       
@@ -251,7 +276,7 @@
 
       <!--
   <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
       <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
     </a>
   </li>
@@ -264,7 +289,8 @@
   </div>
 
 
-  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     
     
     
@@ -275,6 +301,8 @@
         <header>
           
           
+
+
         </header>
       
 
@@ -282,11 +310,11 @@
         
         <p>Welcome!</p>
 
-<p>I am currently a PhD student in the Department of Psychology at UC San Diego. I work in the labs of <a href="http://serenceslab.ucsd.edu" target="_blank">John Serences</a> and <a href="http://stoermerlab.ucsd.edu" target="_blank">Viola Störmer</a>, investigating the neural mechanisms underlying visual perception and attention.</p>
+<p>I am currently a Postdoctoral Associate working in <a href="https://sites.bu.edu/denisonlab/" target="_blank">Rachel Denison’s lab</a> at Boston University. I received my PhD from UC San Diego in 2022, where I worked in the labs of <a href="http://serenceslab.ucsd.edu" target="_blank">John Serences</a> and <a href="https://sites.dartmouth.edu/stoermerlab/" target="_blank">Viola Störmer</a>. Broadly, I am interested in the neural mechanisms underlying visual perception and attention, as well as exploring theoretical and computational aspects of attention.</p>
 
 <p>Before moving to the US for grad school, I received my BSc and BSc (Hons) in psychology, statistics, and mathematics from Victoria University of Wellington in New Zealand. My early research experience came from working with <a href="http://www.canlabvuw.wordpress.com" target="_blank">Gina Grimshaw</a> and <a href="http://www.susilolab.org" target="_blank">Tirta Susilo</a>.</p>
 
-<p>If you have any questions, you can contact me at <a href="mailto:afchapman@ucsd.edu">afchapman@ucsd.edu</a> or on Twitter <a href="http://twitter.com/angusfchapman" target="blank">@angusfchapman</a>.</p>
+<p>If you have any questions, you can contact me at <a href="mailto:angusc@bu.edu">angusc@bu.edu</a> or on Twitter <a href="http://twitter.com/angusfchapman" target="blank">@angusfchapman</a>.</p>
 
 <p><img src="/assets/images/Seattle2017-2.jpg" alt="Seattle, WA, 9/12/17" /></p>
 
@@ -299,6 +327,7 @@
 
 
         
+
       </footer>
 
       
@@ -312,11 +341,12 @@
   
   
 </div>
+
     </div>
 
     
 
-    <div class="page__footer">
+    <div id="footer" class="page__footer">
       <footer>
         <!-- start custom footer snippets -->
 
@@ -324,27 +354,24 @@
         <div class="page__footer-follow">
   <ul class="social-icons">
     
+
     
-      <li><a href="https://twitter.com/angusfchapman"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+
     
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
     
-    
-      <li><a href="https://github.com/afchapman"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
-    
-    
-    
-    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2018 Angus Chapman. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2023 Angus Chapman. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
 
     
   <script src="/assets/js/main.min.js"></script>
-  <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+
 
 
 

@@ -1,25 +1,30 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.12.1 by Michael Rose
-  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.22.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
-  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
 <html lang="en" class="no-js">
   <head>
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Publications | afchapman</title>
-<meta name="description" content="PhD student studying neural mechanisms of attention">
+<meta name="description" content="Postdoc studying neural mechanisms of attention">
 
+
+  <meta name="author" content="Angus Chapman">
+  
 
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="afchapman">
 <meta property="og:title" content="Publications">
-<meta property="og:url" content="http://localhost:4000/pubs/">
+<meta property="og:url" content="https://afchapman.github.io/pubs/">
 
+
+  <meta property="og:description" content="Postdoc studying neural mechanisms of attention">
 
 
 
@@ -27,8 +32,8 @@
 
   <meta name="twitter:site" content="@angusfchapman">
   <meta name="twitter:title" content="Publications">
-  <meta name="twitter:description" content="PhD student studying neural mechanisms of attention">
-  <meta name="twitter:url" content="http://localhost:4000/pubs/">
+  <meta name="twitter:description" content="Postdoc studying neural mechanisms of attention">
+  <meta name="twitter:url" content="https://afchapman.github.io/pubs/">
 
   
     <meta name="twitter:card" content="summary">
@@ -48,24 +53,21 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/pubs/">
+<link rel="canonical" href="https://afchapman.github.io/pubs/">
 
 
 
 
-
-
-
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
       "@type": "Person",
       "name": "Angus Chapman",
-      "url": "http://localhost:4000",
-      "sameAs": null
-    }
-  </script>
-
+      "url": "https://afchapman.github.io/"
+    
+  }
+</script>
 
 
 
@@ -75,11 +77,11 @@
 <!-- end _includes/seo.html -->
 
 
-<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="afchapman Feed">
 
-<!-- http://t.co/dKP3o1e -->
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="afchapman Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
@@ -88,8 +90,9 @@
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
 
-<!--[if lte IE 9]>
+<!--[if IE]>
   <style>
     /* old IE unsupported flexbox fixes */
     .greedy-nav .site-title {
@@ -105,33 +108,54 @@
 <![endif]-->
 
 
-    <!-- start custom head snippets -->
+    <!-- Academicons -->
+<link rel="stylesheet" href="https://afchapman.github.io/assets/css/academicons.min.css">
 
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137026801-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-<!-- end custom head snippets -->
+  gtag('config', 'UA-137026801-1');
+</script>
 
   </head>
 
   <body class="layout--single wide">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
 
     <!--[if lt IE 9]>
 <div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
 <![endif]-->
 
-    <div class="masthead">
+    
+
+<div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <a class="site-title" href="/">afchapman</a>
+        
+        <a class="site-title" href="/">
+          afchapman
+          
+        </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/" >About</a>
+              <a href="/">About</a>
             </li><li class="masthead__menu-item">
-              <a href="/pubs/" >Publications</a>
+              <a href="/pubs/">Publications</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
-          <span class="visually-hidden">Toggle Menu</span>
+          <span class="visually-hidden">Toggle menu</span>
           <div class="navicon"></div>
         </button>
         <ul class="hidden-links hidden"></ul>
@@ -152,12 +176,10 @@
   
 
 
-<div itemscope itemtype="http://schema.org/Person">
+<div itemscope itemtype="https://schema.org/Person">
 
   
     <div class="author__avatar">
-      
-
       
         <img src="/assets/images/pf_pic.jpg" alt="Angus Chapman" itemprop="image">
       
@@ -175,36 +197,33 @@
     <button class="btn btn--inverse">Follow</button>
     <ul class="author__urls social-icons">
       
-        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">San Diego, CA</span>
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Boston, MA</span>
         </li>
       
 
       
-
-      
-        <li>
-          <a href="mailto:afchapman@ucsd.edu">
-            <meta itemprop="email" content="afchapman@ucsd.edu" />
-            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email
-          </a>
-        </li>
-      
-
-      
-
-      
-        <li>
-          <a href="https://twitter.com/angusfchapman" itemprop="sameAs">
-            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
-          </a>
-        </li>
-      
-
-      
-
-      
-
+        
+          
+            <li><a href="mailto:angusc@bu.edu" rel="nofollow noopener noreferrer"><i class="fas fa-envelope" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/angusfchapman" rel="nofollow noopener noreferrer"><i class="fab fa-twitter" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+            <li><a href="https://scholar.google.com/citations?user=GjpdpusAAAAJ&hl=en" rel="nofollow noopener noreferrer"><i class="ai ai-google-scholar" aria-hidden="true"></i><span class="label">Scholar</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/afchapman" rel="nofollow noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://osf.io/v46um/" rel="nofollow noopener noreferrer"><i class="ai ai-osf" aria-hidden="true"></i><span class="label">OSF</span></a></li>
+          
+        
       
 
       
@@ -216,11 +235,17 @@
       
 
       
-        <li>
-          <a href="https://github.com/afchapman" itemprop="sameAs">
-            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
-          </a>
-        </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
       
 
       
@@ -251,7 +276,7 @@
 
       <!--
   <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
       <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
     </a>
   </li>
@@ -264,7 +289,8 @@
   </div>
 
 
-  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Publications">
     
     
@@ -276,6 +302,8 @@
           <h1 id="page-title" class="page__title" itemprop="headline">Publications
 </h1>
           
+
+
         </header>
       
 
@@ -283,30 +311,382 @@
         
         <p>You can view my Google scholar profile <a href="https://scholar.google.com/citations?user=GjpdpusAAAAJ&amp;hl=en" target="_blank">here</a></p>
 
+<p class="notice--info">If you are unable to access any of the files below, please <a href="mailto:angusc@bu.edu">email me</a>!</p>
+
 <h2 id="published-articles">Published Articles</h2>
-<ol class="bibliography"><li><span id="Chapman2018"><b><b>Chapman, A.</b> F.</b>, Hawkins-Elder, H., &amp; Susilo, T. (2018). How robust is familiar face recognition? A repeat detection study of more than 1000 faces. <i>Royal Society Open Science</i>, <i>5</i>, 170634. https://doi.org/10.1098/rsos.170634</span></li>
-<li><span id="Chapman2017"><b>Chapman, A.</b>, Devue, C., &amp; Grimshaw, G. M. (2017). Fleeting reliability in the dot-probe task. <i>Psychological Research</i>. https://doi.org/10.1007/s00426-017-0947-6</span></li>
-<li><span id="Tooley2017">Tooley, M. D., Carmel, D., <b>Chapman, A.</b>, &amp; Grimshaw, G. M. (2017). Dissociating the physiological components of unconscious emotional responses. <i>Neuroscience of Consciousness</i>, <i>3</i>, 1–11. https://doi.org/10.1093/nc/nix021</span></li></ol>
+<ol class="bibliography"><li>
+
+
+
+
+
+
+
+
+
+
+<span id="ChapmanFeatSimBeh"><b>Chapman, A. F.</b>, &amp; Störmer, V. S. (2022). Feature similarity is non-linearly related to attentional selection: evidence from visual search and sustained attention tasks. <i>Journal of Vision</i>, <i>22</i>(8), 4. 
+<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1167/jov.22.8.4">https://doi.org/10.1167/jov.22.8.4</a>
+</span>  </li>
+<li>
+
+
+
+
+
+
+
+
+
+
+<span id="ChapmanSprAtt"><b>Chapman, A. F.</b>, &amp; Störmer, V. S. (2021). Feature-based attention is not confined by object boundaries: spatially global enhancement of irrelevant features. <i>Psychonomic Bulletin and Review</i>, <i>28</i>, 1252–1260. 
+<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.3758/s13423-021-01897-x">https://doi.org/10.3758/s13423-021-01897-x</a>
+</span>  </li>
+<li>
+
+
+
+
+
+
+
+
+
+
+<span id="ChapmanRel_2019"><b>Chapman, A.</b>, Devue, C., &amp; Grimshaw, G. M. (2019). Fleeting reliability in the dot-probe task. <i>Psychological Research</i>, <i>83</i>(2), 308–320. 
+<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1007/s00426-017-0947-6">https://doi.org/10.1007/s00426-017-0947-6</a>
+</span>  </li>
+<li>
+
+
+
+
+
+
+
+
+
+
+<span id="ChapmanFamiliarity_2018"><b>Chapman, A. F.</b>, Hawkins-Elder, H., &amp; Susilo, T. (2018). How robust is familiar face recognition? A repeat detection study of more than 1000 faces. <i>Royal Society Open Science</i>, <i>5</i>, 170634. 
+<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1098/rsos.170634">https://doi.org/10.1098/rsos.170634</a>
+</span>  </li>
+<li>
+
+
+
+
+
+
+
+
+
+
+<span id="TooleyCFS_2017">Tooley, M. D., Carmel, D., <b>Chapman, A.</b>, &amp; Grimshaw, G. M. (2017). Dissociating the physiological components of unconscious emotional responses. <i>Neuroscience of Consciousness</i>, <i>3</i>(1), 1–11. 
+<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1093/nc/nix021">https://doi.org/10.1093/nc/nix021</a>
+</span>  </li></ol>
 
 <h2 id="manuscripts-submitted-or-in-preparation">Manuscripts submitted or in preparation</h2>
-<ol class="bibliography"><li><span id="RezlescuInv">Rezlescu, C., <b><b>Chapman, A.</b> F.</b>, Susilo, T., &amp; Carramazza, A. (submitted). Large inversion effects are not specific to faces and do not vary with object recognition ability. https://doi.org/10.17605/OSF.IO/XZBE5</span></li>
-<li><span id="ChapmanSprAtt"><b><b>Chapman, A.</b> F.</b>, &amp; Störmer, V. S. (in prep). The spreading of feature-based attention is not confined to attended objects.</span></li>
-<li><span id="ChapmanProso"><b><b>Chapman, A.</b> F.</b>, Bell, L., Duchaine, B., &amp; Susilo, T. (in prep). Reduced holistic processing in developmental prosopagnosia: evidence from a large, online study.</span></li>
-<li><span id="HunkinN2pc">Hunkin, L. M., <b><b>Chapman, A.</b> F.</b>, Kranz, L., Corballis, P. M., &amp; Grimshaw, G. M. (in prep). Engagement with angry faces during attentional bias modification: Insights from the N2pc.</span></li></ol>
+<ol class="bibliography"><li>
+
+
+
+
+
+
+
+
+
+
+<span id="ChapmanTargVar"><b>Chapman, A. F.</b>, &amp; Störmer, V. S. (submitted). <i>Efficient tuning of attention to narrow and broad ranges of task-relevant feature values</i>. 
+<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.31234/osf.io/9ckt6">https://doi.org/10.31234/osf.io/9ckt6</a>
+</span>  </li>
+<li>
+
+
+
+
+
+
+
+
+
+
+<span id="ChapmanFeatWarp"><b>Chapman, A. F.</b>, Chunharas, C., &amp; Störmer, V. S. (submitted). <i>Optimal tuning of feature-based attention warps the perception of visual features</i>. 
+<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.31234/osf.io/hbfup">https://doi.org/10.31234/osf.io/hbfup</a>
+</span>  </li>
+<li>
+
+
+
+
+
+
+
+
+
+
+<span id="RezlescuInv">Rezlescu, C., <b>Chapman, A. F.</b>, Susilo, T., &amp; Carramazza, A. (submitted). <i>Large inversion effects are not specific to faces and do not vary with object recognition ability</i>. 
+<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.17605/osf.io/XZBE5">https://doi.org/10.17605/osf.io/XZBE5</a>
+</span>  </li>
+<li>
+
+
+
+
+
+
+
+
+
+
+<span id="ChapmanFeatSimTuning"><b>Chapman, A. F.</b>, Geweke, F., Serences, J. T., &amp; Störmer, V. S. (in prep). <i>Biased representations of attended and unattended colors recovered from human scalp electroencephalography</i>.</span>  </li>
+<li>
+
+
+
+
+
+
+
+
+
+
+<span id="ChapmanProso"><b>Chapman, A. F.</b>, Bell, L., Duchaine, B., &amp; Susilo, T. (in prep). <i>Reduced holistic processing in developmental prosopagnosia: evidence from a large, online study</i>.</span>  </li></ol>
+
+<h2 id="book-chapters">Book Chapters</h2>
+<ol class="bibliography"><li>
+
+
+
+
+
+
+
+
+
+
+<span id="BradyPLM">Brady, T. F., Störmer, V. S., Shafer-Skelton, A., Williams, J. R., <b>Chapman, A. F.</b>, &amp; Schill, H. M. (2019). Scaling up visual attention and visual working memory to the real world. In K. D. Federmeier &amp; D. M. Beck (Eds.), <i>Psychology of Learning and Motivation</i> (Vol. 70, pp. 29–69). 
+<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1016/bs.plm.2019.03.001">https://doi.org/10.1016/bs.plm.2019.03.001</a>
+</span>  </li></ol>
 
 <h2 id="conference-presentations">Conference presentations</h2>
 <h3 id="talks">Talks</h3>
-<ol class="bibliography"><li><span id="KiwiCAM15"><b>Chapman, A.</b>, Devue, C., &amp; Grimshaw, G. M. (2015). <i>Reliability of attentional biases in the dot-probe task</i>. Paper presented at the 4th KiwiCAM conference, Victoria University of Wellington, New Zealand.</span></li>
-<li><span id="KiwiCAM14"><b>Chapman, A.</b>, Tooley, M. D., Carmel, D., &amp; Grimshaw, G. M. (2014). <i>Gone in a flash: No evidence for unconscious perception of emotional valence</i>. Paper presented at the 3rd KiwiCAM conference, University of Auckland, New Zealand.</span></li></ol>
+<ol class="bibliography"><li>
+
+
+
+
+
+
+
+
+
+
+<span id="Chapman_OPAM22"><b>Chapman, A. F.</b>, Chunharas, C., &amp; Störmer, V. S. (2022). <i>Adaptive biases in attention and working memory revealed by pre-cues and retro-cues</i>. Paper presented at the 30th OPAM meeting, Boston, MA, USA.</span>  </li>
+<li>
+
+
+
+
+
+
+
+
+
+
+<span id="Chapman_VSS22"><b>Chapman, A. F.</b>, &amp; Störmer, V. S. (2022). <i>Reconstructing attended and unattended colors from human scalp electroencephalography</i>. Paper presented at the Vision Science Society 2022, St. Pete Beach, FL, USA. 
+<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1167/jov.22.14.4303">https://doi.org/10.1167/jov.22.14.4303</a>
+</span>  </li>
+<li>
+
+
+
+
+
+
+
+
+
+
+<span id="Chapman_VVSS20"><b>Chapman, A. F.</b>, &amp; Störmer, V. S. (2020). <i>Flexible focus in feature-based attention: efficient tuning of attention to narrow and broad ranges of task-relevant feature values</i>. Paper presented at the Virtual Meeting of the Vision Science Society 2020. 
+<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1167/jov.20.11.217">https://doi.org/10.1167/jov.20.11.217</a>
+</span>  
+(<a target="_blank" rel="noopener noreferrer" href="//www.youtube.com/watch?v=XMq3iT4fMuE">video</a>)
+</li>
+<li>
+
+
+
+
+
+
+
+
+
+
+<span id="Chapman_EPC19"><b>Chapman, A. F.</b>, &amp; Störmer, V. S. (2019). <i>Feature-based attention is not confined by object boundaries: spatially global enhancement of irrelevant features</i>. Paper presented at the 46th Annual Conference of the Australasian Society for Experimental Psychology, Wellington, New Zealand.</span>  </li>
+<li>
+
+
+
+
+
+
+
+
+
+
+<span id="Chapman_KiwiCAM15"><b>Chapman, A.</b>, Devue, C., &amp; Grimshaw, G. M. (2015). <i>Reliability of attentional biases in the dot-probe task</i>. Paper presented at the 4th KiwiCAM conference, Victoria University of Wellington, New Zealand.</span>  </li>
+<li>
+
+
+
+
+
+
+
+
+
+
+<span id="Chapman_KiwiCAM14"><b>Chapman, A.</b>, Tooley, M. D., Carmel, D., &amp; Grimshaw, G. M. (2014). <i>Gone in a flash: No evidence for unconscious perception of emotional valence</i>. Paper presented at the 3rd KiwiCAM conference, University of Auckland, New Zealand.</span>  </li></ol>
 
 <h3 id="posters">Posters</h3>
-<ol class="bibliography"><li><span id="SfN_18"><b><b>Chapman, A.</b> F.</b>, &amp; Störmer, V. S. (2018). <i>Feature-based attention spreads within and between objects</i>. Poster presented at Society for Neuroscience, San Diego, CA, USA.</span></li>
-<li><span id="VSS_18"><b><b>Chapman, A.</b> F.</b>, Bell, L., Duchaine, B., &amp; Susilo, T. (2018). <i>Varieties of holistic processing defecits in developmental prosopagnosia</i>. Poster presented at the Vision Science Society, St Pete Beach, FL, USA.</span></li>
-<li><span id="VSS_17">Rezlescu, C., <b>Chapman, A.</b>, Susilo, T., &amp; Carramazza, A. (2017). <i>Large inversion effects are not specific to faces and do not vary with object expertise</i>. Poster presented at the Vision Science Society, St Pete Beach, FL, USA. https://doi.org/10.1167/17.10.250</span></li>
-<li><span id="EPC_16"><b>Chapman, A.</b>, Devue, C., &amp; Grimshaw, G. M. (2016). <i>Fleeting reliability in the dot-probe task</i>. Poster presented at the Australasian Society for Experimental Psychology, Melbourne, Australia.</span></li>
-<li><span id="ASSC_15">Grimshaw, G. M., Tooley, M. D., <b>Chapman, A.</b>, &amp; Carmel, D. (2015). <i>Dissociating unconscious emotion through differential physiological responses</i>. Poster presented at the Association for the Scientific Study of Consciousness, Paris, France.</span></li></ol>
+<ol class="bibliography"><li>
 
-<p><img src="/assets/images/Seattle2018-1.jpg" alt="Twice Told Stories, Seattle, WA, 8/21/17" /></p>
+
+
+
+
+
+
+
+
+
+<span id="Chapman_OPAM21"><b>Chapman, A. F.</b>, Chunharas, C., &amp; Störmer, V. S. (2021). <i>Feature-based attention warps perception of color</i>. Poster presented at the 29th OPAM conference.</span> 
+(<a target="_blank" rel="noopener noreferrer" href="/assets/posters/Chapman_OPAM21.pdf">download</a>)
+ 
+(<a target="_blank" rel="noopener noreferrer" href="//www.youtube.com/watch?v=o2-sUVTOWWk">video</a>)
+</li>
+<li>
+
+
+
+
+
+
+
+
+
+
+<span id="Chapman_VSS21"><b>Chapman, A. F.</b>, &amp; Störmer, V. S. (2021). <i>Quantifying the effects of feature similarity on attentional selection using psychophysical scaling</i>. Poster presented at the Virtual Meeting of the Vision Science Society 2021. 
+<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1167/jov.21.9.2513">https://doi.org/10.1167/jov.21.9.2513</a>
+</span> 
+(<a target="_blank" rel="noopener noreferrer" href="/assets/posters/Chapman_VSS21.pdf">download</a>)
+ </li>
+<li>
+
+
+
+
+
+
+
+
+
+
+<span id="Barszcz_VVSS20">Barszcz, A., <b>Chapman, A. F.</b>, Chunhuras, C., &amp; Störmer, V. S. (2020). <i>Feature-based attention warps perception of color</i>. Poster presented at the Virtual Meeting of the Vision Science Society 2020. 
+<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1167/jov.20.11.1304">https://doi.org/10.1167/jov.20.11.1304</a>
+</span> 
+(<a target="_blank" rel="noopener noreferrer" href="/assets/posters/Barszcz_VVSS20.pdf">download</a>)
+ </li>
+<li>
+
+
+
+
+
+
+
+
+
+
+<span id="Chapman_VSS19"><b>Chapman, A. F.</b>, Geweke, F., &amp; Störmer, V. S. (2019). <i>Feature-based attention resolves differences in target-distractor similarity through multiple mechanisms</i>. Poster presented at the Vision Science Society, St Pete Beach, FL, USA. 
+<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1167/19.10.45a">https://doi.org/10.1167/19.10.45a</a>
+</span> 
+(<a target="_blank" rel="noopener noreferrer" href="/assets/posters/Chapman_VSS19.pdf">download</a>)
+ </li>
+<li>
+
+
+
+
+
+
+
+
+
+
+<span id="Chapman_SfN18"><b>Chapman, A. F.</b>, &amp; Störmer, V. S. (2018). <i>Feature-based attention spreads within and between objects</i>. Poster presented at Society for Neuroscience, San Diego, CA, USA.</span> 
+(<a target="_blank" rel="noopener noreferrer" href="/assets/posters/Chapman_SfN18.pdf">download</a>)
+ </li>
+<li>
+
+
+
+
+
+
+
+
+
+
+<span id="Chapman_VSS18"><b>Chapman, A. F.</b>, Bell, L., Duchaine, B., &amp; Susilo, T. (2018). <i>Varieties of holistic processing defecits in developmental prosopagnosia</i>. Poster presented at the Vision Science Society, St Pete Beach, FL, USA. 
+<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1167/18.10.917">https://doi.org/10.1167/18.10.917</a>
+</span> 
+(<a target="_blank" rel="noopener noreferrer" href="/assets/posters/Chapman_VSS18.pdf">download</a>)
+ </li>
+<li>
+
+
+
+
+
+
+
+
+
+
+<span id="Rezlescu_VSS17">Rezlescu, C., Susilo, T., <b>Chapman, A.</b>, &amp; Carramazza, A. (2017). <i>Large inversion effects are not specific to faces and do not vary with object expertise</i>. Poster presented at the Vision Science Society, St Pete Beach, FL, USA. 
+<a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1167/17.10.250">https://doi.org/10.1167/17.10.250</a>
+</span>  </li>
+<li>
+
+
+
+
+
+
+
+
+
+
+<span id="Chapman_EPC16"><b>Chapman, A.</b>, Devue, C., &amp; Grimshaw, G. M. (2016). <i>Fleeting reliability in the dot-probe task</i>. Poster presented at the Australasian Society for Experimental Psychology, Melbourne, Australia.</span>  </li>
+<li>
+
+
+
+
+
+
+
+
+
+
+<span id="Grimshaw_ASSC15">Grimshaw, G. M., Tooley, M. D., <b>Chapman, A.</b>, &amp; Carmel, D. (2015). <i>Dissociating unconscious emotion through differential physiological responses</i>. Poster presented at the Association for the Scientific Study of Consciousness, Paris, France.</span>  </li></ol>
+
+<hr />
+
+<p><img src="/assets/images/Seattle2018-1.jpg" alt="Twice Told Stories, Seattle, WA, 8/21/17" class="align-center" /></p>
 
         
       </section>
@@ -317,6 +697,7 @@
 
 
         
+
       </footer>
 
       
@@ -330,11 +711,12 @@
   
   
 </div>
+
     </div>
 
     
 
-    <div class="page__footer">
+    <div id="footer" class="page__footer">
       <footer>
         <!-- start custom footer snippets -->
 
@@ -342,27 +724,24 @@
         <div class="page__footer-follow">
   <ul class="social-icons">
     
+
     
-      <li><a href="https://twitter.com/angusfchapman"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+
     
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
     
-    
-      <li><a href="https://github.com/afchapman"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
-    
-    
-    
-    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2018 Angus Chapman. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2023 Angus Chapman. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
 
     
   <script src="/assets/js/main.min.js"></script>
-  <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+
 
 
 

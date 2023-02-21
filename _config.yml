@@ -11,7 +11,7 @@
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
 # theme                  : "minimal-mistakes-jekyll"
-remote_theme             : "mmistakes/minimal-mistakes"
+remote_theme             : "mmistakes/minimal-mistakes@4.22.0"
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
@@ -19,10 +19,11 @@ locale                   : "en-US"
 title                    : "afchapman"
 title_separator          : "|"
 name                     : "Angus Chapman"
-description              : "PhD student studying neural mechanisms of attention"
+description              : "Postdoc studying neural mechanisms of attention"
 url                      : "https://afchapman.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "afchapman/afchapman.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+email                    : angusc@bu.edu
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -92,10 +93,10 @@ social:
 
 # Analytics
 analytics:
-  provider               : false # false (default), "google", "google-universal", "custom"
+  provider               : "google-gtag" # false (default), "google", "google-universal", "custom"
   google:
-    tracking_id          :
-    anonymize_ip         : # true, false (default)
+    tracking_id          : "UA-137026801-1"
+    anonymize_ip         : false # true, false (default)
 
 
 # Site Author
@@ -103,33 +104,24 @@ author:
   name             : "Angus Chapman"
   avatar           : "/assets/images/pf_pic.jpg"
   bio              : 
-  location         : "San Diego, CA"
-  email            : "afchapman@ucsd.edu"
-  uri              :
+  location         : "Boston, MA"
   home             : # null (default), "absolute or relative url to link to author home"
-  bitbucket        :
-  codepen          :
-  dribbble         :
-  flickr           :
-  facebook         :
-  foursquare       :
-  github           : "afchapman"
-  gitlab           :
-  google_plus      :
-  keybase          :
-  instagram        :
-  lastfm           :
-  linkedin         : # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
-  pinterest        :
-  soundcloud       :
-  stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
-  steam            : # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
-  tumblr           :
-  twitter          : "angusfchapman"
-  vine             :
-  weibo            :
-  xing             :
-  youtube          : # "https://youtube.com/c/MichaelRoseDesign"
+  links:
+    - label: "Email"
+      icon: "fas fa-envelope"
+      url: "mailto:angusc@bu.edu"
+    - label: "Twitter"
+      icon: "fab fa-twitter"
+      url: "https://twitter.com/angusfchapman"
+    - label: "Scholar"
+      icon: "ai ai-google-scholar"
+      url: "https://scholar.google.com/citations?user=GjpdpusAAAAJ&hl=en"
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/afchapman"
+    - label: "OSF"
+      icon: "ai ai-osf"
+      url: "https://osf.io/v46um/"
 
 
 # Reading Files
@@ -210,6 +202,7 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-scholar
+  - jekyll-include-cache
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -280,13 +273,25 @@ defaults:
       author_profile: true
 
 scholar:
-  source: ./assets/pubs
+  source: ./assets
   bibliography_template: bib_temp
+
+  repository: ./assets/posters
 
   sort_by: year
   order: descending
 
   bibtex_filters:
-  - latex
-  - markdown
+    - latex
+    - markdown
 
+sitemap:
+    filename: "/sitemap.xml"
+    exclude:
+        - "/atom.xml"
+        - "/feed.xml"
+        - "/feed/index.xml"
+    include_posts:
+        - "/index.html"
+    change_frequency_name: "change_frequency"
+    priority_name: "priority"

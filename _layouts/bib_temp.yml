@@ -1,4 +1,43 @@
 ---
 ---
 
-{{ reference | replace_first: 'Chapman, A. F.', '<b>Chapman, A. F.</b>' | replace_first: 'Chapman, A.', '<b>Chapman, A.</b>' }}
+{% if entry.doi %}
+
+{% capture new_doi %}
+<a target="_blank" rel="noopener noreferrer" href="https://doi.org/{{ entry.doi }}">https://doi.org/{{ entry.doi }}</a>
+{% endcapture %}
+
+{% else %}
+{% assign new_doi = '' %}
+
+{% endif %}
+
+
+
+{% if entry.video %}
+
+{% capture link_vid %}
+(<a target="_blank" rel="noopener noreferrer" href="{{ entry.video }}">video</a>)
+{% endcapture %}
+
+{% else %}
+{% assign link_vid = '' %}
+
+{% endif %}
+
+
+
+{% if link %}
+
+{% capture link_text %}
+(<a target="_blank" rel="noopener noreferrer" href="{{link}}">download</a>)
+{% endcapture %}
+
+{% else %}
+{% assign link_text = '' %}
+
+{% endif %}
+
+
+{{ reference | replace_first: 'Chapman, A.', '<b>Chapman, A.</b>' | replace_first: '<b>Chapman, A.</b> F.', '<b>Chapman, A. F.</b>' |
+replace: 'https://doi.org/', '' | replace: entry.doi, new_doi}} {{ link_text }} {{ link_vid }}
