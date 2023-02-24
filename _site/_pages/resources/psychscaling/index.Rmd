@@ -1,0 +1,486 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.22.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Psychological Scaling using MLDS | afchapman</title>
+<meta name="description" content="Postdoc studying neural mechanisms of attention">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="afchapman">
+<meta property="og:title" content="Psychological Scaling using MLDS">
+<meta property="og:url" content="https://afchapman.github.io/_pages/resources/psychscaling/index.Rmd">
+
+
+  <meta property="og:description" content="Postdoc studying neural mechanisms of attention">
+
+
+
+
+
+  <meta name="twitter:site" content="@angusfchapman">
+  <meta name="twitter:title" content="Psychological Scaling using MLDS">
+  <meta name="twitter:description" content="Postdoc studying neural mechanisms of attention">
+  <meta name="twitter:url" content="https://afchapman.github.io/_pages/resources/psychscaling/index.Rmd">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://afchapman.github.io/_pages/resources/psychscaling/index.Rmd">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Angus Chapman",
+      "url": "https://afchapman.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="afchapman Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- Academicons -->
+<link rel="stylesheet" href="https://afchapman.github.io/assets/css/academicons.min.css">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137026801-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-137026801-1');
+</script>
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          afchapman
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/pubs/">Publications</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name"></h3>
+    
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Psychological Scaling using MLDS">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Psychological Scaling using MLDS
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        ```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+```{r plot theme, include=F}
+plot_theme <- theme(
+  plot.margin = unit(c(.75,.75,.75,.75),'lines'),
+  plot.background = element_blank(),
+  panel.background = element_blank(),
+  panel.grid = element_blank(),
+  axis.line = element_line(color = 'black'),
+  axis.text = element_text(size = 12),
+  axis.title = element_text(size = 16)
+)
+```
+
+This tutorial was written in R, using RMarkdown. You can access the markdown file <a href="index.Rmd" target="_blank">here</a>.
+
+## What is psychological scaling?
+
+## What does a psychological scaling task look like?
+
+```{r load data, include=F}
+data_triad <- read_csv('../../../assets/resources/psychscaling/data_triad.csv',
+                       col_types = 'dddldld')
+data_quad  <- read_csv('../../../assets/resources/psychscaling/data_quad.csv',
+                       col_types = 'dddldld')
+```
+
+## How do we calculate the scaling function?
+
+Once you have data, we can fit the model easily using GLM methods. Knoblauch and Maloney (2012) also describe methods for fitting through direct optimization, however the two methods will lead to very similar scaling estimates.  
+
+Before we fit the model, let's consider how our data is structured. Here's the first few trials from the triad task for one participant:
+
+```{r peek triad data, echo=F}
+data_triad %>%
+  mutate(trialacc = as.numeric(trialacc)) %>%
+  head %>%
+  knitr::kable()
+```
+
+On each trial, we save out the difference in color angle between the reference color and the left item (diffL) and right item (diffR), as well as the participants' choice for which color is most similar to the reference color (saidL). These are going to be the data columns we use for modelling. We could also use their accuracy on each trial; it's mathematically equivalent, but requires recoding the left and right angles to whether they are the correct choice on a given trial (try it yourself and compare!).
+
+This format is going to remain consistent when analyzing the quad task, as you can see from the structure of that data:
+
+```{r peek quad data, echo=F}
+data_quad %>%
+  mutate(trialacc = as.numeric(trialacc)) %>%
+  head %>%
+  knitr::kable()
+```
+
+Here, we ignore the identity of the individual items, and just code the angle difference between the top pair and the bottom pair. 
+
+Because of the similarity in how we fit the data from each task, I'll just use the quad task data from this point onwards (mostly because the experiment I'm taking it from has more trials overall).
+
+#### Fitting the GLM
+
+Although the name may sound intimidating, actually fitting the Maximum Likelihood Difference Scaling model is pretty simple. Essentially, we are estimating the scaling parameters using logistic regression. However, we do have to go one step beyond how you would fit a normal regression model. 
+In this case, we can't just regress the color angle differences onto participants responses, because 1) responses are going to be a function of the relationship between the similarity of the top and bottom colors, and 2) any given difference in color (say, 20&deg; from the reference color) can be the correct choice on one trial (if the alternative is 60&deg; from the reference) but the incorrect choice on another trial (if the alternative is only 10&deg; different from the reference).
+
+This means we have to fit the model slightly more directly, by first constructing the full *design matrix*, which we then regress onto participants' responses. If you've ever taken an upper-level course in regression models or GLMs you've probably done this before, but even if not the idea is not too complicated.
+The design matrix is just a way of encoding into your model the levels of different variables in your data: in a one-way ANOVA, for example, the design matrix contains a column for each level of your independent variable, and each column records a 1 if the condition is present or a 0 if it is absent; in linear regression, each column is a predictor variable with the values of that predictor for each observation (e.g., individuals' heights).
+
+For MLDS, we are going to have a column for each possible difference level, and each column will record if that difference was shown on the top (-1), on the bottom (1), or not shown (0). The reason for this is that as the difference between the colors on the top gets larger, participants should be *less likely* to choose the top, while as the difference on the bottom gets larger, participants should be *more likely* to choose the top.
+
+So, let's build a design matrix! You can do this in any way that works for you, however the R code below should with some adaptations to your particular experiment setup.
+
+```{r build design matrix}
+stim_diffs <- c(0,10,20,30,40,60,90,120,180) # color angle differences used
+
+# first, generate indices for each stim diff to help fill the matrix
+data_quad <- data_quad %>%
+  mutate(diffTopIdx = match(diffTop, stim_diffs),
+         diffBotIdx = match(diffBot, stim_diffs))
+
+quad_mat <- matrix(0, nrow = nrow(data_quad), ncol = length(stim_diffs)) # fill matrix with 0's
+colnames(quad_mat) <- paste0("stim",stim_diffs) # give the columns titles
+
+# loop over trials and fill in the matrix
+for(ii in 1:nrow(quad_mat)) {
+  quad_mat[ii, data_quad$diffTopIdx[ii]] <- -1 # top diffs are -1
+  quad_mat[ii, data_quad$diffBotIdx[ii]] <- 1  # bottom diffs are 1
+}
+
+quad_mat %>% head # check the first few rows for consistency
+```
+
+You should be able to compare this matrix to the data shown earlier. For the first trial: the color difference on top was 90&deg;, which receives a -1 in the design matrix; the color difference on the bottom was 120&deg;, which receives a 1 in the design matrix.
+
+But, we're not quite done yet. Because every row of the design matrix contains both a 1 and a -1, the sum of every row is 0. This means that our matrix is *singular* and the model will not fit correctly. We solve this by discarding the first column of the matrix, corresponding to when the difference between colors on the top or bottom is zero (i.e., the pair are the same color). This does two useful things: it allows the model to be fit, and it effectively fixes our scale so that 0&deg; difference corresponds to a scaling value of zero (which helps interpreting the other scale values too).
+
+```{r fix design matrix}
+quad_mat <- quad_mat[,-1] # drop the first column
+```
+
+Now we can fit our model. If you prefer, you can do this by constructing a data frame that combines participants' responses with the design matrix, but I'm just going to fit things using these structures separately.
+
+We fit the MLDS model using the based 'glm' function in R, but specifying a logistic regression (specifically a "probit" model) as we are predicting a binary output (participants either select the left item, or not). We also remove the intercept from the model (the '-1' in the model specification below), because we are fixing the scale at 0, as mentioned above.
+
+```{r fit quad psych scaling}
+# model specification
+scaling_fit <- glm(data_quad$saidTop ~ quad_mat -1, family = binomial("probit"))
+summary(scaling_fit)
+```
+
+The coefficients from this model are our scaled values, so let's quickly plot them (and also include the point at zero).
+
+```{r plot coefficients, echo=F}
+# pull coefficients
+scaling_out <- data.frame(colors = stim_diffs,
+                          coefs = c(0,coef(scaling_fit)))
+
+scaling_out %>%
+  ggplot(aes(x = colors, y = coefs)) +
+  geom_line(size = 1) +
+  scale_x_continuous("Color distance\u00b0", expand = c(0,0), breaks = stim_diffs) +
+  scale_y_continuous("MLDS scaled values", expand = c(0,0)) +
+  plot_theme
+```
+
+But what do these scale values actually mean? Because we used the **probit** link function in our model, these values are interpretable as quantiles from the cumulative normal distribution. To show you that this is true, we can calculate the probabilities ourselves! 
+
+```{r scale quantiles, echo=F}
+data_quad %>%
+  filter(diffTop %in% c(0,10), diffBot %in% c(0,10)) %>%
+  summarise(acc = mean(trialacc)) %>% .$acc -> quant_0_10
+
+data_quad %>%
+  filter(diffTop %in% c(90,180), diffBot %in% c(90,180)) %>%
+  summarise(acc = mean(trialacc)) %>% .$acc -> quant_90_180
+```
+
+For example, take the scale value for a color distance of 10&deg; (`r round(scaling_out$coefs[2],3)`). Implicitly, this is the quantile for the comparison between pairs with 0&deg; and 10&deg; color distance. If we look at the data for trials with differences of 0&deg; and 10&deg;, we find that this participants' average accuracy is `r round(quant_0_10,3)`. 
+Then, if we compare with the cumulative normal distribution, we find that &Phi;(`r round(scaling_out$coefs[2],3)`) = `r round(pnorm(scaling_out$coefs[2]),3)`. Pretty close!
+
+We can do this for comparison between any pair of distances! The values we get out of the model are all relative to 0&deg;, but we can take differences between values to compare those points too. Take, for example, the difference between 90&deg; and 180&deg;. When comparing pairs that differed by these distances, the participant in our data had an average accuracy of `r round(quant_90_180,3)`, 
+and if we compared the scale values we find that &Phi;(`r round(scaling_out$coefs[9],3)`-`r round(scaling_out$coefs[7],3)`) = &Phi;(`r round(scaling_out$coefs[9]-scaling_out$coefs[7],3)`) = `r round(pnorm(scaling_out$coefs[9]-scaling_out$coefs[7]),3)`. 
+
+The model fit is a little bit off here, predicting better performance than we actually observe, but this demonstrates the limitation of looking at comparisons like this in isolation. In this dataset, for example, there are only 11 trials for each pair of comparisons, but 36 possible comparisons between all differences.
+When fitting the model for each point, it's not trying to fit perfectly to individual comparisons like we have looked at here, but all comparisons that exist in the data. 
+
+Holistically, the model output is consistent with what we observe in the data: participants are better at judgments between pairs that are lower overall in distance (that are more similar, e.g., 0&deg; vs 30&deg;) than pairs that are further in distance (e.g., 90&deg; vs 180&deg;).
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Angus Chapman. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
