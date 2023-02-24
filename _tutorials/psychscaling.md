@@ -12,17 +12,69 @@ knit: (function(input, ...) {
   })
 ---
 
-This tutorial was written in R, using RMarkdown. You can access the
-markdown file
+In this tutorial, I’ll walk you through how to implement Maximum
+Likelihood Difference Scaling in R. See {% cite knoblauch_maloney
+--label chapter --locator 7 -f ext_sources %} for full details.
+
+This tutorial was written in R, using RMarkdown to generate this
+webpage. You can access the markdown file
 <a href="/assets/tutorials/psychscaling/psychscaling.Rmd" target="_blank">here</a>.
+I make heavy use of tidyverse {% cite tidyverse -f ext_sources %}
+throughout, so if you don’t have/use that package you’ll need to rework
+some of the code.
 
 ## What is psychological scaling?
 
+Psychological scaling is a technique that takes behavioral responses to
+stimuli that vary along some dimension and attempts to “scale” them to
+identify the underlying psychological structure of the stimulus space.
+For example, take the circular color space shown below - we have 360
+different colors, each defined in terms of their “angle” around the
+circle. Implicitly, this structuring of the stimulus space (by us, the
+experimenters) suggests that the stimuli should be consistently spaced
+(e.g., 60° is twice as far between colors compared to 30°).
+
+<img src="/assets/tutorials/psychscaling/colorwheel.png" width = 500px style = "margin-bottom: -480px">
+
+Here, we are interested in comparing distances between stimuli, such as
+the perceived similarity between two items on a display, or between an
+item held in mind and another on a display (as is common in many
+cognitive studies). The representation of these distances (i.e., the
+psychological similarity) may not map linearly onto the distances in the
+stimulus space, and indeed this is true for many types of stimuli (as
+we’ll see for color here).
+
 ## What does a psychological scaling task look like?
+
+To estimate how a feature like color is scaled in psychological
+representations, we can get participants to perform a similarity
+judgement task. In these tasks, we present participants with a set of
+stimuli and ask them to make some judgement about the relative
+similarity of the items along the dimension of interest. For example, in
+a “triad” similarity task we can present participants with one reference
+stimuli and two candidate stimuli, and simply ask them which of the two
+candidates is *most similar* to the reference.
+
+<img src="/assets/tutorials/psychscaling/simExampleTriad.png" width = 300px>
+
+We can also present them with two pairs of stimuli (a “quad” similarity
+task) and ask which of the two pairs is *most similar* to one another.
+
+<img src="/assets/tutorials/psychscaling/simExampleQuad.png" width = 200px>
+
+Here, the exact colors of the items are irrelevant to the task, and we
+can vary them randomly from trial to trial. Importantly, both versions
+of this task require participants to assess the distance between the
+stimuli along the feature dimension we care about (e.g., color) and
+determine which distance is greater/smaller. In this way, their
+responses reveal to the experimenter something about how the distances
+are represented internally (i.e., the psychological scaling). But how do
+we take those responses and turn them into some estimate of the
+participant’s “scaling” function? This is where MLDS comes in.
 
 ## How do we calculate the scaling function?
 
-Once you have data, we can fit the model easily using GLM methods.
+Once you have data, we can fit the MLDS model easily using GLM methods.
 Knoblauch and Maloney (2012) also describe methods for fitting through
 direct optimization, however the two methods will lead to very similar
 scaling estimates.
@@ -46,7 +98,9 @@ reference color (saidL). These are going to be the data columns we use
 for modelling. We could also use their accuracy on each trial; it’s
 mathematically equivalent, but requires recoding the left and right
 angles to whether they are the correct choice on a given trial (try it
-yourself and compare!).
+yourself and compare!). Here, we’re predicting the probability of the
+participant picking the left stimulus as most similar, rather than the
+probability of picking the *correct* stimulus.
 
 This format is going to remain consistent when analyzing the quad task,
 as you can see from the structure of that data:
@@ -60,24 +114,26 @@ as you can see from the structure of that data:
 |        5 |      40 |     180 | TRUE    | 1362 |        1 | 9229 |
 |        6 |      10 |      40 | TRUE    | 2375 |        1 | 9229 |
 
-Here, we ignore the identity of the individual items, and just code the
-angle difference between the top pair and the bottom pair.
+In both cases, we ignore the identity of the individual items, and just
+code the angle difference between the pairs (or relative to the
+reference color).
 
 Because of the similarity in how we fit the data from each task, I’ll
-just use the quad task data from this point onwards (mostly because the
+just use the quad task data from this point on (mostly because the
 experiment I’m taking it from has more trials overall).
 
 #### Fitting the GLM
 
 Although the name may sound intimidating, actually fitting the Maximum
-Likelihood Difference Scaling model is pretty simple. Essentially, we
-are estimating the scaling parameters using logistic regression.
-However, we do have to go one step beyond how you would fit a normal
-regression model. In this case, we can’t just regress the color angle
-differences onto participants responses, because 1) responses are going
-to be a function of the relationship between the similarity of the top
-and bottom colors, and 2) any given difference in color (say, 20° from
-the reference color) can be the correct choice on one trial (if the
+Likelihood Difference Scaling (MLDS) model is pretty simple.
+Essentially, we are estimating the scaling parameters using logistic
+regression. However, we do have to go one step beyond how you would fit
+a normal regression model. In this case, we can’t just regress the color
+angle differences onto participants responses, because 1) responses are
+going to be a function of the relationship between the similarity of the
+top and bottom colors (that is, they aren’t just independent
+predictors), and 2) any given difference in color (say, 20° from the
+reference color) can be the correct choice on one trial (if the
 alternative is 60° from the reference) but the incorrect choice on
 another trial (if the alternative is only 10° different from the
 reference).
@@ -86,25 +142,27 @@ This means we have to fit the model slightly more directly, by first
 constructing the full *design matrix*, which we then regress onto
 participants’ responses. If you’ve ever taken an upper-level course in
 regression models or GLMs you’ve probably done this before, but even if
-not the idea is not too complicated. The design matrix is just a way of
-encoding into your model the levels of different variables in your data:
-in a one-way ANOVA, for example, the design matrix contains a column for
-each level of your independent variable, and each column records a 1 if
-the condition is present or a 0 if it is absent; in linear regression,
-each column is a predictor variable with the values of that predictor
-for each observation (e.g., individuals’ heights).
+you haven’t the idea is not too complicated. The design matrix is just a
+way of encoding into your model the levels of different variables in
+your data: in a one-way ANOVA, for example, the design matrix contains a
+column for each level of your independent variable, and each column
+records a 1 if the condition is present or a 0 if it is absent; in
+linear regression, each column is a continuous predictor variable with
+different values on each row for each observation (e.g., individuals’
+heights).
 
 For MLDS, we are going to have a column for each possible difference
 level, and each column will record if that difference was shown on the
-top (-1), on the bottom (1), or not shown (0). The reason for this is
-that as the difference between the colors on the top gets larger,
-participants should be *less likely* to choose the top, while as the
-difference on the bottom gets larger, participants should be *more
-likely* to choose the top.
+top (-1), on the bottom (1), or not shown (0). You can code this using
+other values too, but the choice of -1 and 1 is particularly convenient.
+We choose these values, because as the difference between the colors on
+the top gets larger, participants should be *less likely* to choose the
+top, while as the difference on the bottom gets larger, participants
+should be *more likely* to choose the top.
 
 So, let’s build a design matrix! You can do this in any way that works
-for you, however the R code below should with some adaptations to your
-particular experiment setup.
+for you, however the R code below should work with some adaptations to
+your particular experiment setup.
 
 ``` r
 stim_diffs <- c(0,10,20,30,40,60,90,120,180) # color angle differences used
@@ -141,13 +199,13 @@ which receives a 1 in the design matrix.
 
 But, we’re not quite done yet. Because every row of the design matrix
 contains both a 1 and a -1, the sum of every row is 0. This means that
-our matrix is *singular* and the model will not fit correctly. We solve
-this by discarding the first column of the matrix, corresponding to when
-the difference between colors on the top or bottom is zero (i.e., the
-pair are the same color). This does two useful things: it allows the
-model to be fit, and it effectively fixes our scale so that 0°
-difference corresponds to a scaling value of zero (which helps
-interpreting the other scale values too).
+our matrix is *singular* and the model will not fit. We solve this by
+discarding the first column of the matrix, corresponding to when the
+difference between colors on the top or bottom is zero (i.e., the pair
+are the same color). This does two useful things: it allows the model to
+be fit (always a plus), and it also fixes the output variables along our
+scale so that a 0° difference corresponds to a scaling value of zero
+(which helps interpreting the other scale values too).
 
 ``` r
 quad_mat <- quad_mat[,-1] # drop the first column
@@ -158,11 +216,11 @@ a data frame that combines participants’ responses with the design
 matrix, but I’m just going to fit things using these structures
 separately.
 
-We fit the MLDS model using the based ‘glm’ function in R, but
-specifying a logistic regression (specifically a “probit” model) as we
-are predicting a binary output (participants either select the left
-item, or not). We also remove the intercept from the model (the ‘-1’ in
-the model specification below), because we are fixing the scale at 0, as
+We fit the MLDS model using the base ‘glm’ function in R, but specifying
+a logistic regression (specifically a “probit” model) as we are
+predicting a binary output (participants either select the left item, or
+not). We also remove the intercept from the model (the ‘-1’ in the model
+specification below), because we are fixing the scale intercept at 0, as
 mentioned above.
 
 ``` r
@@ -231,9 +289,28 @@ looking at comparisons like this in isolation. In this dataset, for
 example, there are only 11 trials for each pair of comparisons, but 36
 possible comparisons between all differences. When fitting the model for
 each point, it’s not trying to fit perfectly to individual comparisons
-like we have looked at here, but all comparisons that exist in the data.
+like we have looked at here (i.e., the “local” structure), but all
+comparisons that exist in the data (the “global” structure).
 
 Holistically, the model output is consistent with what we observe in the
 data: participants are better at judgments between pairs that are lower
 overall in distance (that are more similar, e.g., 0° vs 30°) than pairs
 that are further in distance (e.g., 90° vs 180°).
+
+#### Conclusions
+
+I hope this helped provide an intuitive explanation of what
+psychological scaling is, and how you can use MLDS to estimate it. For
+examples of how it can be used in psychological studies more generally,
+you can check out the original MLDS paper {% cite maloney_yang -f
+ext_sources %}, the TCC model of working memory {% cite TCC_model -f
+ext_sources %}, or one of my own papers comparing visual search
+performance as a function of distance in stimulus space or psychological
+space {% cite ChapmanFeatSimBeh %}.
+
+Feel free to reach out to me if you have any questions, comments, or
+suggestions!
+
+## References
+
+{% bibliography --cited_in_order -f ext_sources %}
