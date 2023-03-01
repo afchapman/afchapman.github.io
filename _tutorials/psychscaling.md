@@ -261,7 +261,7 @@ summary(scaling_fit)
 The coefficients from this model are our scaled values, so let’s quickly
 plot them (and also include the point at zero).
 
-![](/assets/tutorials/psychscaling/plot%20coefficients-1.png)
+![](/assets/tutorials/psychscaling/plot-coefficients-1.png)
 
 But what do these scale values actually mean? Because we used the
 **probit** link function in our model, these values are interpretable as
