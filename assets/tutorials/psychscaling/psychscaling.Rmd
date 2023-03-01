@@ -152,6 +152,8 @@
               <a href="/">About</a>
             </li><li class="masthead__menu-item">
               <a href="/pubs/">Publications</a>
+            </li><li class="masthead__menu-item">
+              <a href="/blog/">Blog</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -310,7 +312,7 @@
       <section class="page__content" itemprop="text">
         
         ```{r setup, include=FALSE}
-knitr::opts_knit$set(base.dir = "C:/Users/Angus/Documents/Git/afchapman.github.io/",
+knitr::opts_knit$set(base.dir = "~/Documents/Git/afchapman.github.io/",
                      base.url = "/")
 knitr::opts_chunk$set(echo = TRUE,
                       fig.path = "assets/tutorials/psychscaling/")
@@ -438,7 +440,7 @@ summary(scaling_fit)
 
 The coefficients from this model are our scaled values, so let's quickly plot them (and also include the point at zero).
 
-```{r plot coefficients, echo=F}
+```{r plot-coefficients, echo=F}
 # pull coefficients
 scaling_out <- data.frame(colors = stim_diffs,
                           coefs = c(0,coef(scaling_fit)))
