@@ -11,3 +11,5 @@ Before moving to the US for grad school, I received my BSc and BSc (Hons) in psy
 If you have any questions, you can contact me at [{{ site.email }}](mailto:{{ site.email }}) or on Twitter [@{{ site.twitter.username }}](http://twitter.com/{{ site.twitter.username }}){:target="blank"}.
 
 ![Seattle, WA, 9/12/17](/assets/images/Seattle2017-2.jpg)
+
+<span style="font-size:0.5em;">Last updated: {{ "now" | date: "%b %d, %Y" }}</span>
