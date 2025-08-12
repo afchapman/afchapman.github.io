@@ -47,7 +47,7 @@ scholar_userid: GjpdpusAAAAJ # your Google Scholar ID
 x_username: angusfchapman # your X handle
 # youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 # zotero_username: # your zotero username
-custom_social: # can be any name here other than the ones already defined above
-  logo: # can be png, svg, jpg
-  title:
-  url:
+# custom_social: # can be any name here other than the ones already defined above
+#  logo: # can be png, svg, jpg
+#  title:
+#  url:
