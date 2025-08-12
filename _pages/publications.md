@@ -27,6 +27,7 @@ If you are unable to access any of the files below, please [email me](mailto:{{ 
 
 <div class="publications">
 
+<!--
 ## Published Articles
 
 {% bibliography -q @*[pubtype=article] %}
@@ -48,6 +49,9 @@ If you are unable to access any of the files below, please [email me](mailto:{{ 
 ### Posters
 
 {% bibliography -q @*[pubtype=confposter] %}
+-->
+
+{% bibliography %}
 
 </div>
 
