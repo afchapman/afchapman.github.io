@@ -28,4 +28,18 @@ layout: default
   {% if site.giscus and page.giscus_comments %}
     {% include giscus.liquid %}
   {% endif %}
+
+  {% if page.bottom_image %}
+    <div class="bottom_image">
+    {% assign bottom_image_path = page.bottom_image.image | prepend: 'assets/img/' %}
+    {% assign bottom_image_class = 'img-fluid z-depth-1 rounded' %}
+    {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
+      30vw, 95vw"{% endcapture %}
+    {%
+      include figure.liquid loading="eager" path=bottom_image_path class=bottom_image_class sizes=sizes alt=page.bottom_image.caption
+      cache_bust=true caption=page.bottom_image.caption
+    %}
+    </div>
+  {% endif %}
+
 </div>

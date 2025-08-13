@@ -4,8 +4,13 @@ permalink: /publications/
 title: publications
 nav: true
 nav_order: 2
+
 toc:
   sidebar: right
+
+bottom_image:
+  image: Seattle2018-1.jpg
+  caption: Twice Told Stories, Seattle, WA, 8/24/2018
 ---
 
 <!-- _pages/publications.md -->
@@ -54,7 +59,3 @@ If you are unable to access any of the files below, please [email me](mailto:{{ 
 <div class="publications">
 {% bibliography -q @*[pubtype=confposter] %}
 </div>
-
----
-
-![Twice Told Stories, Seattle, WA, 8/21/17](/assets/img/Seattle2018-1.jpg){: .align-center}
