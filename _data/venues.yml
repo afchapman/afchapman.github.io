@@ -11,3 +11,21 @@
 "OPAM":
   url: https://opamconference.com/
   color: "#f26a4c"
+
+# methods
+
+"EEG":
+  color: "#988514"
+
+"Behavior":
+  color: "#366092"
+
+"Physiology":
+  color: "#853760"
+
+"Theory":
+  color: "#8b4c9a"
+
+"Review":
+  color: "#238762"
+  
