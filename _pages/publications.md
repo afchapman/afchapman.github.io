@@ -5,7 +5,7 @@ title: publications
 nav: true
 nav_order: 2
 toc:
-  beginning: true
+  sidebar: right
 ---
 
 <!-- _pages/publications.md -->
