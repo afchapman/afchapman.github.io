@@ -1,14 +1,14 @@
 # conferences
 
-"VSS"
+"VSS":
   url: https://www.visionsciences.org/
   color: "#b96dac"
 
-"SfN"
+"SfN":
   url: https://sfn.org/
   color: "#056091"
 
-"OPAM"
+"OPAM":
   url: https://opamconference.com/
   color: "#f26a4c"
 
