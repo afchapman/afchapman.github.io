@@ -1,9 +1,16 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+# conferences
 
-"PhysRev":
-  url: https://journals.aps.org/
+"VSS"
+  url: https://www.visionsciences.org/
+  color: "#b96dac"
 
-"Vision":
-  color: "#009f36"
+"SfN"
+  url: https://sfn.org/
+  color: "#056091"
+
+"OPAM"
+  url: https://opamconference.com/
+  color: "#f26a4c"
+
+# journals
+
