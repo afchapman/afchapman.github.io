@@ -16,7 +16,19 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{
+        },{id: "news-i-recently-defended-my-phd-and-am-getting-ready-to-move-to-across-the-country-to-boston-to-work-in-rachel-denison-s-lab-at-bu",
+          title: 'I recently defended my PhD and am getting ready to move to across...',
+          description: "",
+          section: "News",},{id: "news-super-excited-that-my-review-paper-representational-structures-as-a-unifying-framework-for-attention-with-viola-is-now-published-in-trends-in-cognitive-sciences-feel-free-to-get-in-touch-if-you-have-any-questions-or-thoughts",
+          title: 'Super excited that my review paper “Representational structures as a unifying framework for...',
+          description: "",
+          section: "News",},{id: "news-my-first-preprint-from-my-postdoc-is-online-check-it-out-on-biorxiv-a-dynamic-spatiotemporal-normalization-model-for-continuous-vision",
+          title: 'My first preprint from my Postdoc is online! Check it out on biorXiv:...',
+          description: "",
+          section: "News",},{id: "news-a-new-paper-with-mert-and-viola-is-out-in-jneuro-investigating-the-flexibility-of-feature-based-attention-using-ssveps-zooming-in-and-out-selective-attention-modulates-color-signals-in-early-visual-cortex-for-narrow-and-broad-ranges-of-task-relevant-features",
+          title: 'A new paper with Mert and Viola is out in JNeuro, investigating the...',
+          description: "",
+          section: "News",},{
         id: 'social-bluesky',
         title: 'Bluesky',
         section: 'Socials',
