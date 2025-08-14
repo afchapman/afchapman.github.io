@@ -193,6 +193,7 @@ exclude:
   - vendor
   - _news/announcement_*.md
   - _pages/blog.md
+  - _pages/books.md
   - _pages/cv.md
   - _pages/dropdown.md
   - _pages/projects.md
