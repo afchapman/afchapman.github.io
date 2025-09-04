@@ -35,6 +35,9 @@ ninja.data = [{
           section: "News",},{id: "news-a-new-paper-with-mert-and-viola-is-out-in-jneuro-investigating-the-flexibility-of-feature-based-attention-using-ssveps-zooming-in-and-out-selective-attention-modulates-color-signals-in-early-visual-cortex-for-narrow-and-broad-ranges-of-task-relevant-features",
           title: 'A new paper with Mert and Viola is out in JNeuro, investigating the...',
           description: "",
+          section: "News",},{id: "news-i-have-a-new-preprint-online-coauthored-with-melissa-now-at-epfl-in-switzerland-and-rachel-you-can-view-it-on-biorxiv-attention-reshapes-the-representational-geometry-of-a-perceptual-feature-space-data-and-analysis-code-are-also-posted-on-the-project-github-repo",
+          title: 'I have a new preprint online, coauthored with Melissa (now at EPFL in...',
+          description: "",
           section: "News",},{
         id: 'social-bluesky',
         title: 'Bluesky',
