@@ -38,6 +38,12 @@ ninja.data = [{
           section: "News",},{id: "news-i-have-a-new-preprint-online-coauthored-with-melissa-now-at-epfl-in-switzerland-and-rachel-you-can-view-it-on-biorxiv-attention-reshapes-the-representational-geometry-of-a-perceptual-feature-space-data-and-analysis-code-are-also-posted-on-the-project-github-repo",
           title: 'I have a new preprint online, coauthored with Melissa (now at EPFL in...',
           description: "",
+          section: "News",},{id: "news-i-with-doug-and-viola-have-a-new-commentary-out-in-brain-and-behavioral-sciences-responding-to-ruth-rosenholtz-s-interesting-recent-article-visual-attention-in-crisis",
+          title: 'I (with Doug and Viola) have a new commentary out in Brain and...',
+          description: "",
+          section: "News",},{id: "news-our-new-paper-a-dynamic-spatiotemporal-normalization-model-captures-perceptual-and-neural-effects-of-spatial-and-temporal-context-is-now-published-in-plos-biology",
+          title: 'Our new paper “A dynamic spatiotemporal normalization model captures perceptual and neural effects...',
+          description: "",
           section: "News",},{
         id: 'social-bluesky',
         title: 'Bluesky',
