@@ -9,8 +9,6 @@ profile:
   image: pf_pic.jpg
   image_circular: true # crops the image to make it circular
   more_info: >
-    <p>Department of Psychological & Brain Sciences</p>
-    <p>Boston University</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -31,7 +29,10 @@ latest_posts:
 ---
 
 Welcome!
+I am a cognitive and computational neuroscientist studying visual perception, attention, and representation.
+My research utilizes behavioural psychophysics combined with neural measures (such as EEG) and computational modeling.
+I am also interested in theoretical issues in perception and attention.
 
-I am currently a Postdoctoral Associate working in [Rachel Denison's lab](https://sites.bu.edu/denisonlab/){:target="\_blank"} at Boston University. I received my PhD from UC San Diego in 2022, where I worked in the labs of [John Serences](http://serenceslab.ucsd.edu){:target="\_blank"} and [Viola Störmer](https://sites.dartmouth.edu/stoermerlab/){:target="\_blank"}. Broadly, I am interested in the neural mechanisms underlying visual perception and attention, as well as exploring theoretical and computational aspects of attention.
-
-Before moving to the US for grad school, I received my BSc and BSc (Hons) in psychology, statistics, and mathematics from Victoria University of Wellington in New Zealand. My early research experience came from working with [Gina Grimshaw](http://www.canlabvuw.wordpress.com){:target="\_blank"} and [Tirta Susilo](http://www.susilolab.org){:target="\_blank"}.
+Since the beginning of 2026, I have been a Postdoctoral Research Fellow in the School of Psychological Sciences at Victoria University of Wellington in New Zealand, where I work with [Tirta Susilo](http://www.susilolab.org){:target="\_blank"}.
+Prior to my current position, I was a postdoc with [Rachel Denison](https://sites.bu.edu/denisonlab/){:target="\_blank"} at Boston University for 3 years.
+I received my PhD from UC San Diego in 2022, where I worked in the labs of [Viola Störmer](https://sites.dartmouth.edu/stoermerlab/){:target="\_blank"} and [John Serences](http://serenceslab.ucsd.edu){:target="\_blank"}.
