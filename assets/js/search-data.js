@@ -44,6 +44,9 @@ ninja.data = [{
           section: "News",},{id: "news-our-new-paper-a-dynamic-spatiotemporal-normalization-model-captures-perceptual-and-neural-effects-of-spatial-and-temporal-context-is-now-published-in-plos-biology",
           title: 'Our new paper “A dynamic spatiotemporal normalization model captures perceptual and neural effects...',
           description: "",
+          section: "News",},{id: "news-i-m-back-in-new-zealand-following-an-8-year-long-journey-as-a-phd-student-and-postdoc-excited-to-be-working-with-tirta-again-at-victoria-university-of-wellington",
+          title: 'I’m back in New Zealand, following an 8-year long journey as a PhD...',
+          description: "",
           section: "News",},{
         id: 'social-bluesky',
         title: 'Bluesky',
